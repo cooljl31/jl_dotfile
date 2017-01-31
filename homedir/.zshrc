@@ -6,7 +6,21 @@ export ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
 # https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context time battery dir vcs virtualenv custom_wifi_signal)
+# POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="echo signal: \$(nmcli device wifi | grep yes | awk '{print \$8}')"
+# POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="blue"
+# POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="yellow"
+# zsh_wifi_signal(){
+#         local signal=$(nmcli device wifi | grep yes | awk '{print $8}')
+#         local color='%F{yellow}'
+#         [[ $signal -gt 75 ]] && color='%F{green}'
+#         [[ $signal -lt 50 ]] && color='%F{red}'
+#         echo -n "%{$color%}\uf230  $signal%{%f%}" # \uf230 is 
+# }
+#
+# POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context time battery dir vcs virtualenv custom_wifi_signal)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
 # colorcode test
 # for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
@@ -14,7 +28,7 @@ POWERLEVEL9K_NVM_FOREGROUND='000'
 POWERLEVEL9K_NVM_BACKGROUND='072'
 POWERLEVEL9K_SHOW_CHANGESET=true
 #export ZSH_THEME="random"
-
+# export LC_ALL="no_NO.UTF-8"
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
 
@@ -23,6 +37,7 @@ export CASE_SENSITIVE="true"
 
 # disable colors in ls
 # export DISABLE_LS_COLORS="true"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # disable autosetting terminal title.
 export DISABLE_AUTO_TITLE="true"

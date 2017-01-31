@@ -23,6 +23,9 @@
 
 # Release History
 
+## v4.2.1
+ * fixing `Solarized Dark` theme by renaming it to `Solarized Dark Patch`, which removes conflict with bad native install of `Solarized Dark`
+
 ## v4.3.0
  * vim installation fix
  * Enable firewall
