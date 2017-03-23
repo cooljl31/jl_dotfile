@@ -70,6 +70,7 @@
   dv = !git diff | vim
   who = shortlog -s --
   ph = push
+  pfwl = push --force-with-lease
   pl = pull
   lp = log -p
   lod = log --oneline --decorate

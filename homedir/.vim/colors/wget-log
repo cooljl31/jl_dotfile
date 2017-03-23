@@ -1,0 +1,11 @@
+--2017-03-22 22:43:00--  https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark.vim
+Resolving raw.githubusercontent.com... 151.101.112.133
+Connecting to raw.githubusercontent.com|151.101.112.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4244 (4.1K) [text/plain]
+Saving to: ‘atom-dark.vim’
+
+atom-dark.vim         0%[                    ]       0  --.-KB/s               atom-dark.vim       100%[===================>]   4.14K  --.-KB/s    in 0.001s  
+
+2017-03-22 22:43:01 (7.31 MB/s) - ‘atom-dark.vim’ saved [4244/4244]
+

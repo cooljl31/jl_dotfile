@@ -1,26 +1,16 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Must Have
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme solarized
+colorscheme atom-dark
 syntax on
 syntax enable
 let g:solarized_termtrans = 1
 call togglebg#map("<F5>")
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
-if has("autocmd")
-  " Enable filetype detection
-  filetype plugin indent on
-
-  " Restore cursor position
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-endif
+"if has('gui_running')
+    "set background=light
+"else
+    "set background=dark
+"endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -35,14 +25,25 @@ call vundle#begin()
 " plugin on GitHub repo
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'mru'
+Plugin 'rking/ag.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-vinegar'
+Plugin 'cooljl31/vim-auto-save'
+Plugin 'cooljl31/vim-polyglot'
+Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-sensible'
+Plugin 'Shougo/neocomplete'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
@@ -250,8 +251,9 @@ au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 au FileType html set omnifunc=htmlcomplete#CompleteTags
 au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType c set omnifunc=ccomplete#Complete
-" autocmd vimenter * NERDTree
+" autocmd vimentier * NERDTree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change paging overlap amount from 2 to 5 (+3)
@@ -303,3 +305,30 @@ let g:syntastic_javascript_checkers = ['eslint']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
 let g:airline_theme='bubblegum'
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:AutoPairsFlyMode = 1
+let mapleader= ','
+set timeout timeoutlen=1500
+let g:strip_trailing_lines = 1
+let g:rubycomplete_rails = 1
+let ruby_spellcheck_strings = 1
+let g:ruby_indent_block_style = 'do'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Practice
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set guioptions-=e
+set t_CO=256
+set guifont=Fira_codeh16
+set macligatures
+
+nmap <c-R> :CtrlPBufTag<cr>
+nmap <c-e> :CtrlPMRUFiles<cr>
+
+let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
+let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
