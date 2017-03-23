@@ -30,11 +30,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mru'
-Plugin 'rking/ag.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+Plugin 'rking/ag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'cooljl31/vim-auto-save'
@@ -324,7 +324,7 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=e
 set t_CO=256
-set guifont=Fira_codeh16
+set guifont=SourceCodePro+Powerline+Awesome\ regular:h15
 set macligatures
 
 nmap <c-R> :CtrlPBufTag<cr>
