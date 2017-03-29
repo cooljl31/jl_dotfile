@@ -28,9 +28,13 @@ Plugin 'VundleVim/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
 Plugin 'scrooloose/nerdtree'
+Plugin 'msanders/snipmate.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mru'
 Plugin 'vim-airline/vim-airline'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
@@ -231,11 +235,12 @@ endfunction
 " map <F2> <ESC>ggVG:call SuperRetab()<left>
 " map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
 map ,n <plug>NERDTreeTabsToggle<CR>
-
+"nmap <C-H> <C-W><C-H>
+"nmap <C-L> <C-W><C-L>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Useful abbrevs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
+"iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocommands
@@ -317,18 +322,23 @@ let g:ruby_indent_block_style = 'do'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Practice
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set guioptions-=l
+set backspace=indent,eol,start
 set guioptions-=L
-set guioptions-=r
+set guioptions-=l
 set guioptions-=R
+set guioptions-=r
 set guioptions-=e
 set t_CO=256
 set guifont=SourceCodePro+Powerline+Awesome\ regular:h15
 set macligatures
+set splitright
+set complete=.,w,b,u
 
 nmap <c-R> :CtrlPBufTag<cr>
 nmap <c-e> :CtrlPMRUFiles<cr>
-
+map <C-H> <C-w>h<C-w>\|
+map <C-L> <C-w>l<C-w>\|
 let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
+
+nmap ,ev :tabedit $MYVIMRC<cr>
