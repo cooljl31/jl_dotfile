@@ -1,9 +1,7 @@
-[user]
-  name = jim lesperance
-  email = contact@jimlesperance.com
-[github]
-  # https://github.com/blog/180-local-github-config
-  user = cooljl31
+[alias]
+  passport = ~/.git/hooks/bin/git-passport/git-passport.py
+[init]
+    templatedir = ~/.git_template
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html

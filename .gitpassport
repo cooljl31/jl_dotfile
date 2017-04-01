@@ -1,0 +1,14 @@
+[general]
+enable_hook = True
+sleep_duration = 0.75
+
+[passport 0]
+email = contact@jimlesperance.com
+name = jim lesperance
+service = github.com
+
+[passport 1]
+email = jim.lesperance@wlw.de
+name = Lesperance Jim
+service = gitlab.com
+
