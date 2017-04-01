@@ -45,9 +45,11 @@ Plugin 'cooljl31/vim-auto-save'
 Plugin 'cooljl31/vim-polyglot'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'slashmili/alchemist.vim'"
 Plugin 'tpope/vim-sensible'
 Plugin 'Shougo/neocomplete'
+Plugin 'trayo/vim-ruby-collapse'
+Plugin 'cooljl31/nerdcommenter'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
@@ -81,7 +83,7 @@ Plugin 'SuperTab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on " Filetype auto-detection
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -258,7 +260,7 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType c set omnifunc=ccomplete#Complete
-" autocmd vimentier * NERDTree
+" autocmd vimenter * NERDTree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change paging overlap amount from 2 to 5 (+3)
@@ -296,6 +298,7 @@ let NERDTreeIgnore=['\.DS_Store$']
 " set runtimepath set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%#warningmsg#
 set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
@@ -342,3 +345,23 @@ let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
 
 nmap ,ev :tabedit $MYVIMRC<cr>
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0  " do not save while in insert
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nmap
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap ,fd :FufDir<CR>
+nmap ,ff :FufFile<CR>
+nmap ,nf :NERDTreeFind<CR>
+nmap ,m :NERDTreeToggle<CR>
+nmap s <Plug>(easymotion-s)
+" Bidirectional & within line 't' motion
+omap t <Plug>(easymotion-bd-tl)
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1

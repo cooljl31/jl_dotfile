@@ -29,6 +29,15 @@ cscope.po.out
 .Spotlight-V100
 .Trashes
 
+# Ignore tags created by etags, ctags, gtags (GNU global) and cscope
+TAGS
+.TAGS
+!TAGS/
+tags
+.tags
+!tags/
+gtags.files
+
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
