@@ -70,7 +70,7 @@
   dv = !git diff | vim
   who = shortlog -s --
   ph = push
-  pfwl = push --force-with-lease
+  phfwl = push --force-with-lease
   pl = pull
   lp = log -p
   lod = log --oneline --decorate
@@ -99,6 +99,7 @@
   rv = remote -v
   lwr = log --stat -C
   pur = pull --rebase
+  forkup = pull --rebase upstream
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
   orphank = !gitk --all `git reflog | cut -c1-7`&
   orphanl = !git log --pretty=oneline --abbrev-commit --graph --decorate `git reflog | cut -c1-7`
@@ -138,7 +139,7 @@
   configpushnothing = config push.default nothing
   configpushmatching = config push.default matching
   configpushcurrent = config push.default current
-
+  restore = '!f() { git checkout $(git rev-list -n 1 HEAD -- $1)~1 -- $(git diff --name-status $(git rev-list -n 1 HEAD -- $1)~1 | grep '^D' | cut -f 2); }; f'
   nr = "!sh -c 'git init $0'"
   echoparam1 = "!sh -c 'echo $0'"
   #testshfunction = "!function gitme() { git init $1; cd $1; }; gitme"
@@ -187,9 +188,10 @@
   clean = expand -t 4
 
 [push]
-  default = matching
-	followTags = true
+  default = current
 
+[pull]
+    default = simple
 [filter "media"]
   required = true
   clean = git media clean %f

@@ -50,6 +50,10 @@ Plugin 'tpope/vim-sensible'
 Plugin 'Shougo/neocomplete'
 Plugin 'trayo/vim-ruby-collapse'
 Plugin 'cooljl31/nerdcommenter'
+Plugin 'FuzzyFinder'
+Plugin 'L9'
+Plugin 'mru'
+Plugin 'trayo/vim-ruby-collapse'
 Plugin 'justinmk/vim-sneak'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
@@ -345,6 +349,26 @@ let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
 
 nmap ,ev :tabedit $MYVIMRC<cr>
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0  " do not save while in insert
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Nmap
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap ,fd :FufDir<CR>
+nmap ,ff :FufFile<CR>
+nmap ,nf :NERDTreeFind<CR>
+nmap ,m :NERDTreeToggle<CR>
+nmap s <Plug>(easymotion-s)
+" Bidirectional & within line 't' motion
+omap t <Plug>(easymotion-bd-tl)
+" Use uppercase target labels and type as a lower case
+let g:EasyMotion_use_upper = 1
+ " type `l` and match `l`&`L`
+let g:EasyMotion_smartcase = 1
+" Smartsign (type `3` and match `3`&`#`)
+let g:EasyMotion_use_smartsign_us = 1
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert
 
