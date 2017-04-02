@@ -341,9 +341,8 @@ nmap <c-R> :CtrlPBufTag<cr>
 nmap <c-e> :CtrlPMRUFiles<cr>
 map <C-H> <C-w>h<C-w>\|
 map <C-L> <C-w>l<C-w>\|
-let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
-
+map <Leader>b :CtrlPBuffer<CR>
 nmap ,ev :tabedit $MYVIMRC<cr>
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert
@@ -368,6 +367,40 @@ let g:EasyMotion_use_smartsign_us = 1
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert
 
+"" Fix command typos (stolen from Adam Katz)
+nmap ; :
+
+"" Highlight lines over 80 characters long by pressing leader H
+nnoremap <Leader>H :call<SID>LongLineHLToggle()<cr>
+hi OverLength ctermbg=none cterm=none
+match OverLength /\%>80v/
+fun! s:LongLineHLToggle()
+  if !exists('w:longlinehl')
+    let w:longlinehl = matchadd('ErrorMsg', '.\%>80v', 0)
+    echo "Long lines highlighted"
+  else
+    call matchdelete(w:longlinehl)
+    unl w:longlinehl
+    echo "Long lines unhighlighted"
+  endif
+endfunction
+"" End of highlighting lines
+
+"" ----------------------------------------------------------------------------
+""  Random other items
+"" ----------------------------------------------------------------------------
+" Custom ignore for ctrl-p
+  let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+"let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" Ignore html in syntastic since it doesn't handle handlebars
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+" Don't require saving a buffer before switching buffers
+set hidden
+
+" Set notes directory for vim notes
+let g:notes_directories = ['~/Dropbox/Notes']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nmap
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
