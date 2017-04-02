@@ -70,6 +70,7 @@ Plugin 'digitaltoad/vim-pug'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'node.js'
 Plugin 'SuperTab'
+Plugin 'ryanoasis/vim-devicons'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -333,7 +334,6 @@ set guioptions-=r
 set guioptions-=e
 set t_CO=256
 set guifont=SourceCodePro+Powerline+Awesome\ regular:h15
-set macligatures
 set splitright
 set complete=.,w,b,u
 
@@ -385,3 +385,4 @@ let g:EasyMotion_use_upper = 1
 let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 let g:EasyMotion_use_smartsign_us = 1
+"let g:airline_powerline_fonts = 1

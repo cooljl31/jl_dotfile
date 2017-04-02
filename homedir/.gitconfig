@@ -1,7 +1,5 @@
-[alias]
-  passport = ~/.git/hooks/bin/git-passport/git-passport.py
 [init]
-    templatedir = ~/.git_template
+    templatedir = ~/.dotfile/.git_template
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -45,10 +43,11 @@
   safecrlf = warn
   # prevent crlf (then you will have to deal with the problem -- dos2unix, etc)
   #safecrlf = true
-  editor = mvim
+  editor = vim
   #editor = subl -w
 
 [alias]
+  passport = ~/.dotfiles/.git/hooks/bin/git-passport/git-passport.py
   # most commonly used
   co = checkout
   d = diff --color-words
