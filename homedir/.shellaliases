@@ -8,6 +8,9 @@ alias grea='git reset --hard'
 #############################
 # Utilities
 
+# Passport
+alias passport="~/.dotfiles/.git/hooks/bin/git-passport/git-passport.py"
+
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
