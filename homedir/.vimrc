@@ -409,6 +409,7 @@ let g:notes_directories = ['~/Dropbox/Notes']
 
 nmap ,fd :FufDir<CR>
 nmap ,ff :FufFile<CR>
+nmap ,ft :FufBufferTag<CR>
 nmap ,nf :NERDTreeFind<CR>
 nmap ,m :NERDTreeToggle<CR>
 nmap s <Plug>(easymotion-s)
