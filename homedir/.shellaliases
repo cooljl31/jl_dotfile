@@ -37,7 +37,7 @@ alias files.usage='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep
 alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v grep|grep Users'
 
 alias game.seek='txt="";for i in {1..20};do txt=$txt"$i. ";done;txt=$txt" Ready or not, here I come";say $txt'
-alias vi='vim -t tag'
+#alias vi='vim -t tag'
 # Git Tools
 # assumes git-up is installed (gem install git-up)
 # switches to 'develop' branch, updates all local branches (nicely using git-up), removes all local branches already merged into 'develop'

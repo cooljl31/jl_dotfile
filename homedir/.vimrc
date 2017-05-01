@@ -7,9 +7,9 @@ syntax enable
 let g:solarized_termtrans = 1
 call togglebg#map("<F5>")
 "if has('gui_running')
-    "set background=light
+"set background=light
 "else
-    "set background=dark
+"set background=dark
 "endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
@@ -25,53 +25,55 @@ call vundle#begin()
 " plugin on GitHub repo
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
-" Navigation (IDE frame)
 Plugin 'scrooloose/nerdtree'
-Plugin 'msanders/snipmate.vim'
-"Plugin 'honza/vim-snippets'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'mru'
-Plugin 'StripWhiteSpaces'
-Plugin 'vim-airline/vim-airline'
+" snippets setup
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-"Plugin 'garbas/vim-snipmate'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-Plugin 'rking/ag.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-vinegar'
+" trailing whitwspace
+Plugin 'StripWhiteSpaces'
+" auto save and highlights
 Plugin 'cooljl31/vim-auto-save'
 Plugin 'cooljl31/vim-polyglot'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-fugitive'
-Plugin 'slashmili/alchemist.vim'"
-Plugin 'tpope/vim-sensible'
-Plugin 'Shougo/neocomplete'
-Plugin 'trayo/vim-ruby-collapse'
+" comment
 Plugin 'cooljl31/nerdcommenter'
-Plugin 'justinmk/vim-sneak'
-Plugin 'airblade/vim-gitgutter'
+" Tools
+Plugin 'suan/vim-instant-markdown'
+Plugin 'L9'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'FuzzyFinder'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'godlygeek/tabular'
+"Plugin 'mru'
+"Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'rking/ag.vim'
+"Plugin 'msanders/snipmate.vim'
+"Plugin 'tpope/vim-vinegar'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'slashmili/alchemist.vim'"
+"Plugin 'tpope/vim-sensible'
+"Plugin 'Shougo/neocomplete'
+"Plugin 'trayo/vim-ruby-collapse'
+"Plugin 'justinmk/vim-sneak'
+"Plugin 'airblade/vim-gitgutter'
 " visual undo list
-Plugin 'sjl/gundo.vim'
+"Plugin 'sjl/gundo.vim'
 " Plugin 'majutsushi/tagbar'
 " markdown preview: opens browser with live reload when vim opens .md
-Plugin 'suan/vim-instant-markdown'
-Plugin 'godlygeek/tabular'
 " language tools
-Plugin 'scrooloose/syntastic'
-Plugin 'millermedeiros/vim-esformatter'
-Plugin 'digitaltoad/vim-pug'
+"Plugin 'scrooloose/syntastic'
+"Plugin 'millermedeiros/vim-esformatter'
+"Plugin 'digitaltoad/vim-pug'
 " Plugin 'elzr/vim-json'
 " Plugin 'SirVer/ultisnips'
-"Plugin 'sheerun/vim-polyglot'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'node.js'
-Plugin 'SuperTab'
+"Plugin 'node.js'
+"Plugin 'SuperTab'
 Plugin 'ryanoasis/vim-devicons'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -239,7 +241,7 @@ endfunction
 " map <left> <ESC>:NERDTreeToggle<RETURN>  " moves left fa split
 " map <F2> <ESC>ggVG:call SuperRetab()<left>
 " map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
-map ,n <plug>NERDTreeTabsToggle<CR>
+"map ,n <plug>NERDTreeTabsToggle<CR>
 "nmap <C-H> <C-W><C-H>
 "nmap <C-L> <C-W><C-L>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -315,6 +317,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
+let g:sneak#label = 1
 let g:airline_theme='bubblegum'
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:AutoPairsFlyMode = 1
