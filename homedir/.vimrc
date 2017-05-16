@@ -107,7 +107,7 @@ filetype plugin indent on " Filetype auto-detection
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set history=1000 " How many lines of history to remember
+set history=10000 " How many lines of history to remember
 set cf " enable error files and error jumping
 " set clipboard+=unnamed " turns out I do like sharing windows clipboard
 set ffs=unix,dos,mac " support all three, in this order

@@ -28,7 +28,8 @@ POWERLEVEL9K_NVM_FOREGROUND='000'
 POWERLEVEL9K_NVM_BACKGROUND='072'
 POWERLEVEL9K_SHOW_CHANGESET=true
 # export LC_ALL="no_NO.UTF-8"
-export ZSH_THEME="random"
+#export ZSH_THEME="random"
+export ZSH_THEME="jnrowe"
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"

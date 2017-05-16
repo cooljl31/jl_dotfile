@@ -53,7 +53,8 @@
   d = diff --color-words
   cam = commit -a -m
   upm = !git fetch upstream && git merge upstream/master
-
+  # Ctags
+  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
   # least used
   br = branch -a
   s = status -s -u
