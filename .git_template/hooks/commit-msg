@@ -1,9 +1,9 @@
-##!/usr/bin/env ruby
+#!/usr/bin/env ruby
 
 require 'net/http'
 require 'json'
 
-uri = URI.parse('http://api.icndb.com/jokes/random?limitTo=[nerdy]')
+uri = URI.parse('https://api.icndb.com/jokes/random?limitTo=[nerdy]')
 response = Net::HTTP.get(uri)
 joke = JSON.parse(response)["value"]["joke"]
 
