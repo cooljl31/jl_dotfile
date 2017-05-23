@@ -265,10 +265,12 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType c set omnifunc=ccomplete#Complete
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
+"autocmd vimenter * silent :!/bin/rm .git/hooks/*
+"autocmd vimenter * silent :!git ctags
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Change paging overlap amount from 2 to 5 (+3)
+" Change paging overlap ount from 2 to 5 (+3)
 " if you swapped C-y and C-e, and set them to 2, it would
 " remove any overlap between pages
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
