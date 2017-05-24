@@ -39,6 +39,8 @@ Plugin 'cooljl31/vim-polyglot'
 " comment
 Plugin 'cooljl31/nerdcommenter'
 " Tools
+" remember to install" pip install Pillow"
+Plugin 'ashisha/image.vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'L9'
 Plugin 'vim-scripts/surround.vim'
