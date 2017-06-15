@@ -51,6 +51,7 @@ Plugin 'FuzzyFinder'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'mileszs/ack.vim'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'jiangmiao/auto-pairs'
 " git show
 Plugin 'mhinz/vim-signify'
 Plugin 'airblade/vim-gitgutter'
