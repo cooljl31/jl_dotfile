@@ -39,7 +39,7 @@ Plugin 'cooljl31/vim-polyglot'
 " comment
 Plugin 'cooljl31/nerdcommenter'
 " Tools
-" remember to install" pip install Pillow"
+" remember to install pip install Pillow
 Plugin 'ashisha/image.vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'L9'
@@ -47,11 +47,13 @@ Plugin 'vim-scripts/surround.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Townk/vim-autoclose'
 Plugin 'FuzzyFinder'
 Plugin 'dkprice/vim-easygrep'
-Plugin 'godlygeek/tabular'
+Plugin 'mileszs/ack.vim'
 Plugin 'ryanoasis/vim-devicons'
+" git show
+Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
 "Plugin 'mru'
 "Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'rking/ag.vim'
@@ -60,7 +62,7 @@ Plugin 'ryanoasis/vim-devicons'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'slashmili/alchemist.vim'"
 "Plugin 'tpope/vim-sensible'
-"Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/neocomplete'
 "Plugin 'trayo/vim-ruby-collapse'
 "Plugin 'justinmk/vim-sneak'
 "Plugin 'airblade/vim-gitgutter'
@@ -237,9 +239,9 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <up> <ESC>:bp<RETURN> " left arrow (normal mode) switches buffers
-" map <down> <ESC>:bn<RETURN> " right arrow (normal mode) switches buffers
-" map <right> <ESC>:Tlist<RETURN> " show taglist
+ "map <up> <ESC>:bp<RETURN> " left arrow (normal mode) switches buffers
+ "map <down> <ESC>:bn<RETURN> " right arrow (normal mode) switches buffers
+ "map <right> <ESC>:Tlist<RETURN> " show taglist
 " map <left> <ESC>:NERDTreeToggle<RETURN>  " moves left fa split
 " map <F2> <ESC>ggVG:call SuperRetab()<left>
 " map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
@@ -322,7 +324,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
 let g:sneak#label = 1
-let g:airline_theme='bubblegum'
+"let g:airline_theme='bubblegum'
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:AutoPairsFlyMode = 1
 let mapleader= ','
@@ -348,31 +350,16 @@ set complete=.,w,b,u
 
 nmap <c-R> :CtrlPBufTag<cr>
 nmap <c-e> :CtrlPMRUFiles<cr>
-map <C-H> <C-w>h<C-w>\|
-map <C-L> <C-w>l<C-w>\|
+"map <C-H> <C-w>h<C-w>\|
+"map <C-L> <C-w>l<C-w>\|
 let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
 map <Leader>b :CtrlPBuffer<CR>
 nmap ,ev :tabedit $MYVIMRC<cr>
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_in_insert_mode = 0  " do not save while in insert
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nmap
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nmap ,fd :FufDir<CR>
-nmap ,ff :FufFile<CR>
-nmap ,nf :NERDTreeFind<CR>
-nmap ,m :NERDTreeToggle<CR>
-nmap s <Plug>(easymotion-s)
-" Bidirectional & within line 't' motion
-omap t <Plug>(easymotion-bd-tl)
-" Use uppercase target labels and type as a lower case
-let g:EasyMotion_use_upper = 1
- " type `l` and match `l`&`L`
-let g:EasyMotion_smartcase = 1
-" Smartsign (type `3` and match `3`&`#`)
-let g:EasyMotion_use_smartsign_us = 1
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert
 
@@ -427,5 +414,79 @@ let g:EasyMotion_use_upper = 1
  " type `l` and match `l`&`L`
 let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
+"let g:neocomplete#enable_at_startup = 1
 let g:EasyMotion_use_smartsign_us = 1
-"let g:airline_powerline_fonts = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neocomplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType ruby setlocal omnifunc=rubycomplete#CompleteTags
+
+" Enable heavy omni completion.
+"if !exists('g:neocomplete#sources#omni#input_patterns')
+  "let g:neocomplete#sources#omni#input_patterns = {}
+"endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+"let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
