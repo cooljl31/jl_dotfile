@@ -18,6 +18,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # used for my presentation decks when I have nothing to say about the commit
 alias bpc='git add -A . && git cam "$(buzzphrase 2)" && git push'
 
+# compoer.phar
+alias composer='composer.phar'
+
 # recursive dos2unix in current directory
 alias dos2lf='dos2unix `find ./ -type f`'
 

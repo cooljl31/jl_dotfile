@@ -20,14 +20,15 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 " snippets setup
-"Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'garbas/vim-snipmate'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -40,7 +41,7 @@ Plugin 'cooljl31/vim-polyglot'
 Plugin 'cooljl31/nerdcommenter'
 " Tools
 " remember to install pip install Pillow
-Plugin 'ashisha/image.vim'
+"Plugin 'ashisha/image.vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'L9'
 Plugin 'vim-scripts/surround.vim'
@@ -54,7 +55,7 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'jiangmiao/auto-pairs'
 " git show
 Plugin 'mhinz/vim-signify'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 "Plugin 'mru'
 "Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'rking/ag.vim'
@@ -178,7 +179,7 @@ set tabstop=2 " real tabs should be 4, but they will show with set list on
 set copyindent " but above all -- follow the conventions laid before us
 " wrap lines at 120 chars. 80 is somewhat antiquated with nowadays displays.
 set textwidth=120
-filetype plugin indent on " load filetype plugins and indent settings
+"filetype plugin indent on " load filetype plugins and indent settings
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text Formatting/Layout
@@ -248,6 +249,7 @@ endfunction
 " map <F12> ggVGg? " apply rot13 for people snooping over shoulder, good fun
 "map ,n <plug>NERDTreeTabsToggle<CR>
 "nmap <C-H> <C-W><C-H>
+map <F7> mzgg=G
 "nmap <C-L> <C-W><C-L>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Useful abbrevs
@@ -326,14 +328,14 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:sneak#streak = 1
 let g:sneak#label = 1
 "let g:airline_theme='bubblegum'
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:AutoPairsFlyMode = 1
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:AutoPairsFlyMode = 1
 let mapleader= ','
 set timeout timeoutlen=1500
 let g:strip_trailing_lines = 1
 let g:rubycomplete_rails = 1
 let ruby_spellcheck_strings = 1
-let g:ruby_indent_block_style = 'do'
+"let g:ruby_indent_block_style = 'do'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Practice
@@ -348,7 +350,6 @@ set t_CO=256
 set guifont=SourceCodePro+Powerline+Awesome\ regular:h15
 set splitright
 set complete=.,w,b,u
-
 nmap <c-R> :CtrlPBufTag<cr>
 nmap <c-e> :CtrlPMRUFiles<cr>
 "map <C-H> <C-w>h<C-w>\|
@@ -391,7 +392,7 @@ endfunction
 "let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Ignore html in syntastic since it doesn't handle handlebars
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+"let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " Don't require saving a buffer before switching buffers
 set hidden
@@ -409,14 +410,14 @@ nmap ,nf :NERDTreeFind<CR>
 nmap ,m :NERDTreeToggle<CR>
 nmap s <Plug>(easymotion-s)
 " Bidirectional & within line 't' motion
-omap t <Plug>(easymotion-bd-tl)
+"omap t <Plug>(easymotion-bd-tl)
 " Use uppercase target labels and type as a lower case
-let g:EasyMotion_use_upper = 1
+"let g:EasyMotion_use_upper = 1
  " type `l` and match `l`&`L`
-let g:EasyMotion_smartcase = 1
+"let g:EasyMotion_smartcase = 1
 " Smartsign (type `3` and match `3`&`#`)
 "let g:neocomplete#enable_at_startup = 1
-let g:EasyMotion_use_smartsign_us = 1
+"let g:EasyMotion_use_smartsign_us = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Neocomplete
@@ -451,12 +452,12 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+  return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -464,7 +465,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " AutoComplPop like behavior.
-"let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -481,13 +482,19 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#CompleteTags
 
 " Enable heavy omni completion.
-"if !exists('g:neocomplete#sources#omni#input_patterns')
-  "let g:neocomplete#sources#omni#input_patterns = {}
-"endif
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
-"let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
