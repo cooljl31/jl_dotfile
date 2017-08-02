@@ -26,6 +26,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 " snippets setup
+Plugin 'scrooloose/vim-slumlord'
+Plugin 'aklt/plantuml-syntax'
 Plugin 'honza/vim-snippets'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'

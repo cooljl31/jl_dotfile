@@ -45,6 +45,8 @@
   #safecrlf = true
   editor = vim
   #editor = subl -w
+  ignoreStat =  true
+  fscache = true
 
 [alias]
   passport = ~/.dotfiles/.git/hooks/bin/git-passport/git-passport.py
