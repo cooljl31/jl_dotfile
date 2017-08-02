@@ -390,7 +390,12 @@ endfunction
 ""  Random other items
 "" ----------------------------------------------------------------------------
 " Custom ignore for ctrl-p
-  let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+  "let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|tmp)|(\.(txt|swp|ico|git|svn))$'
+  " Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|dist$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 "let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Ignore html in syntastic since it doesn't handle handlebars
