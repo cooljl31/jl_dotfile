@@ -103,3 +103,13 @@ alias vtop="vtop --theme wizard"
 alias dm='docker-machine'
 alias dc='docker-compose'
 alias dcup='docker-compose up -d'
+
+# Gitx aliases
+alias gx='gitx'
+alias gxd='gitx --diff'
+alias gxc='gitx --commit'
+alias gxa='gitx --all'
+alias gxs='gitx -s'
+alias gxS='gitx -S'
+alias gxr='gitx -r'
+alias gxp='gitx -p'

@@ -45,6 +45,7 @@ Plugin 'cooljl31/nerdcommenter'
 " Tools
 " remember to install pip install Pillow
 "Plugin 'ashisha/image.vim'
+Plugin 'cooljl31/rails-vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'L9'
 Plugin 'vim-scripts/surround.vim'
@@ -114,9 +115,18 @@ filetype plugin indent on " Filetype auto-detection
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set UTF-8 encoding
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+"set enc=utf-8
+"set fenc=utf-8
+"set termencoding=utf-8
 set history=10000 " How many lines of history to remember
 set cf " enable error files and error jumping
 " set clipboard+=unnamed " turns out I do like sharing windows clipboard
