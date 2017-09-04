@@ -228,7 +228,6 @@ set foldopen-=undo " don't open folds when you undo stuff
 " Matchit
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let b:match_ignorecase = 1
-
 let vim_markdown_preview_github=1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Perl
@@ -277,7 +276,7 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 au FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType c set omnifunc=ccomplete#Complete
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 "autocmd vimenter * silent :!/bin/rm .git/hooks/*
 "autocmd vimenter * silent :!git ctags
 
@@ -355,12 +354,13 @@ set t_CO=256
 set guifont=SourceCodePro+Powerline+Awesome\ regular:h15
 set splitright
 set complete=.,w,b,u
-nmap <c-R> :CtrlPBufTag<cr>
+"nmap <c-R> :CtrlPBufTag<cr>
 nmap <c-e> :CtrlPMRUFiles<cr>
 "map <C-H> <C-w>h<C-w>\|
 "map <C-L> <C-w>l<C-w>\|
 let g:ctrlp_match_window = 'top,order:ttb,max:30,results:30'
 map <Leader>b :CtrlPBuffer<CR>
+map <Leader>e :CtrlPBufTag<CR>
 nmap ,ev :tabedit $MYVIMRC<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -428,7 +428,6 @@ nmap s <Plug>(easymotion-s)
 " Smartsign (type `3` and match `3`&`#`)
 "let g:neocomplete#enable_at_startup = 1
 "let g:EasyMotion_use_smartsign_us = 1
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Neocomplete
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -486,24 +485,20 @@ let g:neocomplete#enable_auto_select = 1
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
 " Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#CompleteTags
-
+let g:neocomplete#force_overwrite_completefunc = 1
 " Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
 "if !exists('g:neocomplete#sources#omni#input_patterns')
   "let g:neocomplete#sources#omni#input_patterns = {}
 "endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 "let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 set omnifunc=syntaxcomplete#Complete
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
@@ -525,3 +520,4 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+"let g:ackprg = 'ag --vimgrep'
