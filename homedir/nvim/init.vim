@@ -664,7 +664,7 @@ let g:neomake_go_gometalinter_maker = {
         \ 'prompt': ' @' ,
         \ 'reversed': 0,
         \})
-  "call denite#custom#var('file_rec', 'command',['rg', '--threads', '2', '--files', '--glob', '!.git'])
+  call denite#custom#var('file_rec', 'command',['rg', '--threads', '2', '--files', '--glob', '!.git'])
   " call denite#custom#source('file_rec', 'vars', {
   "       \ 'command': [
   "       \ 'ag', '--follow','--nogroup','--hidden', '--column', '-g', '', '--ignore', '.git', '--ignore', '*.png'

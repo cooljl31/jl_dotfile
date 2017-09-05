@@ -13,8 +13,8 @@ homedir/.vim/temp/*
 homedir/.vim/.netrwhist
 homedir/.vim/bundle/*
 !homedir/.vim/bundle/.gitignore
-configs/nvim/.cache/
-configs/nvim/repos
+homedir/nvim/.cache/
+homedir/nvim/repos/
 noevimconfig/
-configs/nvim/nvim-python.*
+homedir/nvim/nvim-python.*
 !homedir/.vim/bundle/Vundle.vim
