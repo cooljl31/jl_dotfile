@@ -53,7 +53,6 @@
   call dein#add('AndrewRadev/switch.vim')
   call dein#add('christoomey/vim-tmux-navigator')
   call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
   call dein#add('mhartington/oceanic-next')
   call dein#add('tpope/vim-surround')
   call dein#add('907th/vim-auto-save')
@@ -78,7 +77,7 @@
   call dein#add('ujihisa/neco-look')
   call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
   call dein#add('zchee/deoplete-jedi')
-  call dein#add('fatih/vim-go') " error neovim.api.nvim.NvimError: b'Vim(call):E475: Invalid argument: Channel id must be a positive integer'
+  call dein#add('fatih/vim-go')
   call dein#add('zchee/deoplete-go')
   call dein#add('junegunn/limelight.vim')
   call dein#add('Konfekt/FastFold')
@@ -259,16 +258,16 @@ nnoremap <leader>d "_d
   " let g:neoformat_enabled_javascript = ['prettier']
   let g:neomake_javascript_enabled_makers = ['eslint']
 
-  " let g:jsx_ext_required = 1
+  let g:jsx_ext_required = 1
   let g:jsdoc_allow_input_prompt = 1
   let g:jsdoc_input_description = 1
   let g:vim_json_syntax_conceal = 0
   let g:tern#command = ['tern']
   let g:tern#arguments = ['--persistent']
 
-  "map <silent> <leader>gd :TSDoc <cr>
-  "map <silent> <leader>gt :TSType <cr>
-  "map <silent> <leader>@ :Denite -buffer-name=TSDocumentSymbol TSDocumentSymbol <cr>
+  map <silent> <leader>gd :TSDoc <cr>
+  map <silent> <leader>gt :TSType <cr>
+  map <silent> <leader>@ :Denite -buffer-name=TSDocumentSymbol TSDocumentSymbol <cr>
 " }}}
 
 " Java ----------------------------------------------------------------------{{{
@@ -282,7 +281,7 @@ nnoremap <leader>d "_d
 
 " }}}
 
-" Golang ------------------------------------------------------------------------{{{
+" Go ------------------------------------------------------------------------{{{
  au FileType go set noexpandtab
  au FileType go set shiftwidth=4
  au FileType go set softtabstop=4
@@ -304,7 +303,7 @@ au FileType go nmap <leader>gD <Plug>(go-doc)
 au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
 
 " Run goimports when running gofmt
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
 
 " Set neosnippet as snippet engine
 let g:go_snippet_engine = "neosnippet"
@@ -374,7 +373,6 @@ let g:neomake_go_gometalinter_maker = {
   \   '%E%f:%l::%trror: %m,' .
   \   '%W%f:%l::%tarning: %m'
   \ }
-
 "}}}
 
 " CSS -----------------------------------------------------------------------{{{
@@ -457,8 +455,8 @@ let g:neomake_go_gometalinter_maker = {
   let g:vimfiler_ignore_pattern = ""
   " map <silent> - :VimFiler<CR>
 	let g:vimfiler_tree_leaf_icon = ''
-	let g:vimfiler_tree_opened_icon = '170170'
-	let g:vimfiler_tree_closed_icon = '\u170170'
+  let g:vimfiler_tree_opened_icon = '▾'
+  let g:vimfiler_tree_closed_icon = '▸'
 	let g:vimfiler_file_icon = ''
 	let g:vimfiler_marked_file_icon = '*'
   let g:vimfiler_expand_jump_to_first_child = 0
@@ -521,7 +519,7 @@ let g:neomake_go_gometalinter_maker = {
   let g:NERDTreeHeader = 'hello'
 
 
-  " let g:webdevicons_conceal_nerdtree_brackets = 0
+" let g:webdevicons_conceal_nerdtree_brackets = 0
   " let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
   " 
   let g:NERDTreeShowIgnoredStatus = 0
@@ -530,7 +528,6 @@ let g:neomake_go_gometalinter_maker = {
   let g:NERDTreeDirArrowExpandable = '▸'
   let g:NERDTreeDirArrowCollapsible = '▾'
   "let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '▸'
-  "autocmd FileType nerdtree setlocal nolist
 "}}}
 
 " Nvim terminal -------------------------------------------------------------{{{
@@ -545,7 +542,7 @@ let g:neomake_go_gometalinter_maker = {
 
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
   let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
-  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim'] = ''
+  let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vim'] = ''
 
 " }}}
 
@@ -581,7 +578,6 @@ let g:neomake_go_gometalinter_maker = {
   let g:deoplete#enable_at_startup = 1
   let g:echodoc_enable_at_startup=1
   set splitbelow
-  set splitright
   set completeopt+=noselect
   set completeopt-=preview
   autocmd CompleteDone * pclose
@@ -599,7 +595,7 @@ let g:neomake_go_gometalinter_maker = {
   call deoplete#custom#set('omni', 'mark', '⌾')
   call deoplete#custom#set('file', 'mark', 'file')
   call deoplete#custom#set('jedi', 'mark', '')
-  call deoplete#custom#set('neosnippet', 'mark', '')
+  call deoplete#custom#set('neosnippet', 'mark', '⌘')
 
   " let g:deoplete#omni_patterns = {}
   " let g:deoplete#omni_patterns.html = ''
@@ -753,6 +749,11 @@ let g:neomake_go_gometalinter_maker = {
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#mike#enabled = 0
   set hidden
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#neomake#error_symbol='• '
+  let g:airline#extensions#neomake#warning_symbol='•  '
   " unicode symbols
   let g:airline_left_sep = ''
   let g:airline_right_sep = ''
@@ -761,7 +762,6 @@ let g:neomake_go_gometalinter_maker = {
   let g:airline_symbols.crypt = '🔒'
   let g:airline_symbols.linenr = '␊'
   let g:airline_symbols.linenr = '␤'
-  let g:airline_symbols.linenr = '¶'
   let g:airline_symbols.maxlinenr = '☰'
   let g:airline_symbols.maxlinenr = ''
   let g:airline_symbols.branch = '⎇'
@@ -771,11 +771,6 @@ let g:neomake_go_gometalinter_maker = {
   let g:airline_symbols.spell = 'Ꞩ'
   let g:airline_symbols.notexists = '∄'
   let g:airline_symbols.whitespace = 'Ξ'
-  let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline#extensions#tabline#buffer_idx_mode = 1
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#neomake#error_symbol='• '
-  let g:airline#extensions#neomake#warning_symbol='•  '
   "let g:airline_theme='oceanicnext'
   cnoreabbrev <silent> <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
   tmap <leader>x <c-\><c-n>:bp! <BAR> bd! #<CR>
