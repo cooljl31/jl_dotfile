@@ -324,7 +324,7 @@
   au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
 
   " Run goimports when running gofmt
-  " let g:go_fmt_command = "goimports"
+  let g:go_fmt_command = "goimports"
 
   " Set neosnippet as snippet engine
   let g:go_snippet_engine = "neosnippet"
