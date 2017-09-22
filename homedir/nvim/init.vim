@@ -65,7 +65,7 @@
 
   call dein#add('Shougo/denite.nvim')
   " call dein#add('ctrlpvim/ctrlp.vim')
-
+  call dein#add('Yggdroot/indentLine')
   " Vim slim Highlight
   call dein#add('slim-template/vim-slim.git')
 
@@ -863,4 +863,5 @@
       set inccommand=split          " enables interactive search and replace
   endif
 
+  let g:indentLine_char = '|'
 "}}}
