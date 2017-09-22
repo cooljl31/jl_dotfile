@@ -66,6 +66,9 @@
   call dein#add('Shougo/denite.nvim')
   " call dein#add('ctrlpvim/ctrlp.vim')
 
+  " Vim slim Highlight
+  call dein#add('slim-template/vim-slim.git')
+
   call dein#add('Shougo/neomru.vim')
   call dein#add('Shougo/context_filetype.vim')
   call dein#add('chemzqm/denite-git')
