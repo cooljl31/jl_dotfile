@@ -211,6 +211,7 @@
   " nnoremap : ;
   " give it a try and you will like it
   nnoremap ; :
+  vnoremap ; :
   inoremap <c-f> <c-x><c-f>
   " Copy to osx clipboard
   vnoremap <C-c> "*y<CR>
