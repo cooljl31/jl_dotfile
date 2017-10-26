@@ -109,6 +109,8 @@
   call dein#add('tpope/vim-projectionist')
   call dein#add('thoughtbot/vim-rspec')
   call dein#add('ecomba/vim-ruby-refactoring')
+  call dein#add('google/vim-searchindex')
+  call dein#add('christoomey/vim-quicklink')
 
   " call dein#local('~/GitHub', {},['operator-next'])
   call dein#add('chemzqm/denite-git')
@@ -586,9 +588,9 @@
   " Enable snipMate compatibility feature.
     let g:neosnippet#enable_snipmate_compatibility = 1
     let g:neosnippet#expand_word_boundary = 1
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
+    imap <C-s>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-s>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-s>     <Plug>(neosnippet_expand_target)
 
   " SuperTab like snippets behavior.
     imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
