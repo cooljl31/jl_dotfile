@@ -18,3 +18,4 @@ homedir/nvim/repos/
 noevimconfig/
 homedir/nvim/nvim-python.*
 !homedir/.vim/bundle/Vundle.vim
+homedir/.vim/undo/**
