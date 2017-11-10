@@ -27,3 +27,4 @@ export PKG_CONFIG_PATH=$HOME/goworkspace/src/github.com/mattn/go-oci8
 #########################################################################
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 export NVM_DIR=~/.nvm
+export DATASTORE_EMULATOR_HOST=localhost:8081

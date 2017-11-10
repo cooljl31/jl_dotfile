@@ -97,9 +97,9 @@ set ts=2
 set sw=2
 set expandtab
 set undofile
-set undolevels=1000
-set undoreload=10000
-set undodir=$HOME/.VIM_UNDO_FILES
+" set undolevels=1000
+" set undoreload=10000
+" set undodir=$HOME/.VIM_UNDO_FILES
 let mapleader = ","
 set noswapfile
 nnoremap ; :
