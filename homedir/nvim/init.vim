@@ -225,7 +225,7 @@
   autocmd CompleteDone * pclose
   augroup lazy_load_plugins
     autocmd!
-    autocmd InsertEnter * call dein#add('vim-easymotion')
+    autocmd InsertEnter * call dein#add('vim-scripts/vim-easymotion')
                        \| autocmd! lazy_load_plugins
   augroup END
   autocmd BufReadPost *
@@ -235,7 +235,7 @@
 
   augroup lazy_load_plugins
     autocmd!
-    autocmd InsertEnter * call dein#add('vim-easymotion')
+    autocmd InsertEnter * call dein#add('vim-scripts/vim-easymotion')
                        \| autocmd! lazy_load_plugins
   augroup END
   autocmd BufReadPost *
