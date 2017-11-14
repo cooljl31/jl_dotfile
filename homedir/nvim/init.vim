@@ -48,7 +48,7 @@
   call dein#add('tmux-plugins/vim-tmux')
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-rails')
-  call dein#add('tpope/vim-surround')
+  call dein#add('jiangmiao/auto-pairs')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('vim-scripts/BufOnly.vim')
@@ -79,6 +79,8 @@
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
   call dein#add('joonty/vim-phpqa')
+  call dein#add('vim-scripts/StripWhiteSpaces')
+  call dein#add('terryma/vim-multiple-cursors')
 
   " call dein#local('~/GitHub', {},['operator-next'])
   call dein#add('Shougo/denite.nvim')
@@ -213,6 +215,11 @@
   let g:deoplete#enable_at_startup = 1
   let g:startify_change_to_dir = 0
   let g:indentLine_char = '|'
+  let g:strip_trailing_lines = 1
+  let g:multi_cursor_next_key='<C-n>'
+  let g:multi_cursor_prev_key='<C-p>'
+  let g:multi_cursor_skip_key='<C-x>'
+  let g:multi_cursor_quit_key='<Esc>'
 " }}}
 
   autocmd CompleteDone * pclose
@@ -481,3 +488,12 @@ endif
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+" Disable deoplete when in multi cursor mode
+function! Multiple_cursors_before()
+  let b:deoplete_disable_auto_complete = 1
+endfunction
+
+function! Multiple_cursors_after()
+  let b:deoplete_disable_auto_complete = 0
+endfunction
