@@ -71,9 +71,6 @@ unsetopt correct
 # run fortune on new terminal :)
 fortune
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 . /Users/cooljl31/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # The next line updates PATH for the Google Cloud SDK.
