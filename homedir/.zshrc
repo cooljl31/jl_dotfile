@@ -76,5 +76,7 @@ fortune
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/cooljl31/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/cooljl31/google-cloud-sdk/path.zsh.inc'; fi
 
+eval "$(rbenv init -)"
+
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc'; fi

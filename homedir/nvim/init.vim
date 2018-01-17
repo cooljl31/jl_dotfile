@@ -69,6 +69,9 @@
   call dein#add('tpope/vim-surround')
   call dein#add('mhartington/oceanic-next')
 
+  call dein#add('neovim/node-host', { 'do': 'npm install' })
+  call dein#add('vimlab/mdown.vim', { 'do': 'npm install' })
+
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('tpope/vim-rails')
   call dein#add('tpope/vim-rake')
@@ -81,6 +84,13 @@
   call dein#add('joonty/vim-phpqa')
   call dein#add('vim-scripts/StripWhiteSpaces')
   call dein#add('terryma/vim-multiple-cursors')
+
+
+  " Typescript
+  call dein#add('mhartington/nvim-typescript')
+
+  call dein#local('~/GitHub', {},['nvim-typescript'])
+  call deoplete#enable_logging('DEBUG', system('echo $HOME/.dotfiles/log/deoplete.log') )
 
   " call dein#local('~/GitHub', {},['operator-next'])
   call dein#add('Shougo/denite.nvim')
@@ -103,7 +113,7 @@
   let g:OceanicNext_italic = 1
 "}}}
 
-" System mappings  ----------------------------------------------------------{{{
+" System conf  ----------------------------------------------------------{{{
   set termguicolors
   highlight ExtraWhitespace ctermbg=red guibg=red
   match ExtraWhitespace /\s\+$/
@@ -128,7 +138,7 @@
   set wildmode=longest,full
   set spell
   set noshowmode
-  set  number
+  set relativenumber
   set numberwidth=1
   set tabstop=2 shiftwidth=2 expandtab
   set conceallevel=0
@@ -181,7 +191,6 @@
   let vim_markdown_preview_github=1
   let g:python3_host_skip_check=1
   let g:jsx_ext_required = 0
-  let g:ruby_path = system('echo $HOME/.rbenv/shims')
   let g:sneak#streak = 1
   let g:miniBufExplMapWindowNavVim = 1
   let g:miniBufExplMapWindowNavArrows = 1
@@ -190,8 +199,6 @@
   let g:ale_lint_on_enter = 0
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
-  let g:auto_save = 1  " enable AutoSave on Vim startup
-  let g:auto_save_in_insert_mode = 0  " do not save while in insert
   let g:startify_change_to_dir = 0
   let g:netrw_banner = 0
   let g:netrw_liststyle = 3
@@ -202,18 +209,11 @@
   let g:miniBufExplMapWindowNavArrows = 1
   let g:miniBufExplMapCTabSwitchBufs = 1
   let g:miniBufExplModSelTarget = 1
-  let g:ale_lint_on_enter = 0
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
   let g:ruby_path = system('echo $HOME/.rbenv/shims')
-  let g:jsx_ext_required = 0
-  let g:netrw_banner = 0
-  let g:netrw_liststyle = 3
-  let g:netrw_browse_split = 4
-  let g:netrw_altv = 1
-  let g:netrw_winsize = 25
   let g:deoplete#enable_at_startup = 1
-  let g:startify_change_to_dir = 0
+  let g:deoplete#enable_debug = 1
+  let g:deoplete#enable_profile = 1
+  let g:deoplete#enable_refresh_always = 1
   let g:indentLine_char = '|'
   let g:strip_trailing_lines = 1
   let g:multi_cursor_next_key='<C-n>'
@@ -471,6 +471,8 @@ let g:neomake_go_gometalinter_maker = {
   \   '%E%f:%l::%trror: %m,' .
   \   '%W%f:%l::%tarning: %m'
   \ }
+
+  let g:neoformat_run_all_formatters = 1
 "}}}
 
 " Configure signs. ----------------------------------------------{{{
