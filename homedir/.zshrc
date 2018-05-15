@@ -77,6 +77,7 @@ fortune
 if [ -f '/Users/cooljl31/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/cooljl31/google-cloud-sdk/path.zsh.inc'; fi
 
 eval "$(rbenv init -)"
+eval `ssh-agent -s`
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc'; fi

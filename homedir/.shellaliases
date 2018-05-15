@@ -113,3 +113,5 @@ alias gxs='gitx -s'
 alias gxS='gitx -S'
 alias gxr='gitx -r'
 alias gxp='gitx -p'
+
+alias vss='open -a Visual\ Studio\ Code'
