@@ -37,7 +37,7 @@ for file in .*; do
   running "~/$file"
   if [[ -e ~/$file ]]; then
       unlink $file;
-      echo -en "project dotfile $file unlinked";ok
+      echo -en "project dotfiles $file unlinked";ok
   fi
 
   if [[ -e ./$file ]]; then

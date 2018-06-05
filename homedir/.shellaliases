@@ -115,3 +115,6 @@ alias gxr='gitx -r'
 alias gxp='gitx -p'
 
 alias vss='open -a Visual\ Studio\ Code'
+alias tower='open -a Tower'
+
+alias ctags="`brew --prefix`/bin/ctags"

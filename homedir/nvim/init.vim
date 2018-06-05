@@ -17,10 +17,11 @@
   set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
   call dein#begin(expand('~/.config/nvim'))
   call dein#add('Shougo/dein.vim')
+  call dein#add('rhysd/nyaovim-popup-tooltip')
   call dein#add('haya14busa/dein-command.vim')
-  call dein#add('JamshedVesuna/vim-markdown-preview')
   call dein#add('alvan/vim-closetag')
   call dein#add('bling/vim-airline')
+  call dein#add('Quramy/tsuquyomi')
   call dein#add('chase/vim-ansible-yaml')
   call dein#add('chriskempson/base16-vim')
   call dein#add('dgryski/vim-godef')
@@ -40,6 +41,7 @@
   call dein#add('mhinz/vim-startify')
   call dein#add('mileszs/ack.vim')
   call dein#add('mxw/vim-jsx')
+  call dein#add('isRuslan/vim-es6')
   call dein#add('ngmy/vim-rubocop')
   call dein#add('pangloss/vim-javascript')
   call dein#add('scrooloose/nerdtree', { 'on': [] })
@@ -64,7 +66,6 @@
   call dein#add('tomtom/tcomment_vim')
   call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call dein#add('Yggdroot/indentLine')
-  call dein#add('sjl/gundo.vim')
   call dein#add('sbdchd/neoformat')
   call dein#add('tpope/vim-surround')
   call dein#add('mhartington/oceanic-next')
@@ -78,6 +79,7 @@
   call dein#add('tpope/vim-projectionist')
   call dein#add('thoughtbot/vim-rspec')
   call dein#add('ecomba/vim-ruby-refactoring')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('honza/vim-snippets')
@@ -148,7 +150,7 @@
   set wrap linebreak nolist
   set autoread
   set undofile
-  set undolevels=1000
+  set undolevels=10000
   set undoreload=10000
   set undodir=$HOME/.VIM_UNDO_FILES
 " }}}
@@ -173,7 +175,6 @@
   inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
   inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-  nmap s <Plug>(easymotion-overwin-f2)
   map  <Leader>w <Plug>(easymotion-bd-w)
   nmap <Leader>w <Plug>(easymotion-overwin-w)
   nnoremap <Leader>< :SidewaysLeft<CR>
@@ -183,12 +184,14 @@
   nnoremap <S-Right> :bnext<cr>
   tmap <leader>, <C-\><C-n>:bnext<cr>
   tmap <leader>. <C-\><C-n>:bprevious<CR>
+  nnoremap <Leader>m :<C-u>MiniBrowser <C-r><C-p><CR>
 
+  noremap <silent> <c-s-up> :call <SID>swap_up()<CR>
+  noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
 "}}}"
 
 " Let -----------------------------------------------------------{{{
   let g:go_fmt_command = "goimports"
-  let vim_markdown_preview_github=1
   let g:python3_host_skip_check=1
   let g:jsx_ext_required = 0
   let g:sneak#streak = 1
@@ -220,7 +223,77 @@
   let g:multi_cursor_prev_key='<C-p>'
   let g:multi_cursor_skip_key='<C-x>'
   let g:multi_cursor_quit_key='<Esc>'
+  let g:tsuquyomi_completion_detail = 1
+  let g:tsuquyomi_shortest_import_path = 1
+  let s:basedir = expand('<sfile>:p:h').'/../'
+  let g:tsuquyomi_use_dev_node_module = 1
+  let g:typescript_compiler_binary = 'tsc'
+  let g:typescript_compiler_options = ''
 " }}}
+
+" Javascript ----------------------------------------------------------------{{{
+
+  " let g:neoformat_enabled_javascript = ['prettier']
+  let g:neomake_javascript_enabled_makers = ['eslint']
+
+  let g:jsx_ext_required = 1
+  let g:jsdoc_allow_input_prompt = 1
+  let g:jsdoc_input_description = 1
+  let g:vim_json_syntax_conceal = 0
+  let g:tern#command = ['tern']
+  let g:tern#arguments = ['--persistent']
+
+  " let g:nvim_typescript#signature_complete=1
+  " let g:nvim_typescript#type_info_on_hold=1
+  " let g:nvim_typescript#max_completion_detail=100
+  "
+  let g:neomake_typescript_tsc_maker = {
+            \ 'append_file': 0,
+            \ 'args': ['--project', getcwd() . '/tsconfig.json', '--noEmit'],
+            \ 'errorformat':
+            \   '%E%f %#(%l\,%c): error %m,' .
+            \   '%E%f %#(%l\,%c): %m,' .
+            \   '%Eerror %m,' .
+            \   '%C%\s%\+%m'
+            \}
+
+  let g:neomake_typescript_enabled_makers = ['tsc']
+  map <silent> <leader>gd :TSDoc <cr>
+  map <silent> <leader>gt :TSType <cr>
+  map <silent> <leader>@ :Denite -buffer-name=TSDocumentSymbol TSDocumentSymbol <cr>
+  " autocmd FileType typescript setl omnifunc=TSComplete
+  let g:nvim_typescript#kind_symbols = {
+      \ 'keyword': 'keyword',
+      \ 'class': '',
+      \ 'interface': 'interface',
+      \ 'script': 'script',
+      \ 'module': '',
+      \ 'local class': 'local class',
+      \ 'type': 'type',
+      \ 'enum': '',
+      \ 'enum member': '',
+      \ 'alias': '',
+      \ 'type parameter': 'type param',
+      \ 'primitive type': 'primitive type',
+      \ 'var': '',
+      \ 'local var': '',
+      \ 'property': '',
+      \ 'let': '',
+      \ 'const': '',
+      \ 'label': 'label',
+      \ 'parameter': 'param',
+      \ 'index': 'index',
+      \ 'function': '',
+      \ 'local function': 'local function',
+      \ 'method': '',
+      \ 'getter': '',
+      \ 'setter': '',
+      \ 'call': 'call',
+      \ 'constructor': '',
+      \}
+" }}}
+
+  autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
   autocmd CompleteDone * pclose
   augroup lazy_load_plugins
@@ -242,7 +315,6 @@
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
       \   exe "normal! g`\"" |
       \ endif
-
 " Code formatting -----------------------------------------------------------{{{
 
   ",f to format code, requires formatters: read the docs
@@ -498,4 +570,32 @@ endfunction
 
 function! Multiple_cursors_after()
   let b:deoplete_disable_auto_complete = 0
+endfunction
+
+
+function! s:swap_lines(n1, n2)
+    let line1 = getline(a:n1)
+    let line2 = getline(a:n2)
+    call setline(a:n1, line2)
+    call setline(a:n2, line1)
+endfunction
+
+function! s:swap_up()
+    let n = line('.')
+    if n == 1
+        return
+    endif
+
+    call s:swap_lines(n, n - 1)
+    exec n - 1
+endfunction
+
+function! s:swap_down()
+    let n = line('.')
+    if n == line('$')
+        return
+    endif
+
+    call s:swap_lines(n, n + 1)
+    exec n + 1
 endfunction

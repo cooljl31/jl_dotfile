@@ -11,7 +11,9 @@
   # diff = auto
   # status = auto
   # branch = auto
-
+[user]
+  name = Jim lesperance
+  email = contact@jimlesperance.com
 [color "branch"]
   current = yellow reverse
   local = yellow

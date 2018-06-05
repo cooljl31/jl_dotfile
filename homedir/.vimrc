@@ -45,12 +45,11 @@ Plugin 'cooljl31/nerdcommenter'
 " Tools
 " remember to install pip install Pillow
 "Plugin 'ashisha/image.vim'
-Plugin 'cooljl31/rails-vim'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'L9'
 Plugin 'vim-scripts/surround.vim'
-Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'FuzzyFinder'
 Plugin 'dkprice/vim-easygrep'
@@ -341,6 +340,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
 let g:sneak#label = 1
+"colorscheme OceanicNext
+set background=dark
+let g:OceanicNext_italic = 1
+
 "let g:airline_theme='bubblegum'
 "let g:auto_save = 1  " enable AutoSave on Vim startup
 "let g:AutoPairsFlyMode = 1
