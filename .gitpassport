@@ -16,3 +16,8 @@ service = github.com
 email = lesperancejim.lj@hotmail.com
 name = Jim Lesperance
 service = gitlab.com
+
+[passport 3]
+email = contact@jimlesperance.com
+name = jim lesperance
+service = github.com/tolingo
