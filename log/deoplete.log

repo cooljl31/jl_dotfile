@@ -1,0 +1,74 @@
+2019-07-10 19:07:05,492 INFO     [22340] (deoplete.logging) --- Deoplete Log Start ---
+2019-07-10 19:07:05,495 INFO     [22340] (deoplete.logging) NVIM v0.3.8, Python 3.7.4, neovim client 0.3.1
+2019-07-10 19:07:05,507 DEBUG    [22340] (deoplete.core) on_event: Init
+2019-07-10 19:07:05,546 DEBUG    [22340] (deoplete.core) Process 0: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/base.py
+2019-07-10 19:07:05,550 DEBUG    [22340] (deoplete.core) Process 1: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/omni.py
+2019-07-10 19:07:05,550 DEBUG    [22340] (deoplete.core) Process 2: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/member.py
+2019-07-10 19:07:05,550 DEBUG    [22340] (deoplete.core) Process 3: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/around.py
+2019-07-10 19:07:05,550 DEBUG    [22340] (deoplete.core) Process 0: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/file.py
+2019-07-10 19:07:05,550 DEBUG    [22340] (deoplete.core) Process 1: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/buffer.py
+2019-07-10 19:07:05,551 DEBUG    [22340] (deoplete.core) Process 2: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/dictionary.py
+2019-07-10 19:07:05,551 DEBUG    [22340] (deoplete.core) Process 3: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/tag.py
+2019-07-10 19:07:05,552 DEBUG    [22340] (deoplete.core) Process 0: /Users/Jim/.config/nvim/repos/github.com/deoplete-plugins/deoplete-go/rplugin/python3/deoplete/sources/deoplete_go.py
+2019-07-10 19:07:05,552 DEBUG    [22340] (deoplete.core) Process 1: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/sources/typescript.py
+2019-07-10 19:07:05,552 DEBUG    [22340] (deoplete.core) Process 2: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/sources/emoji.py
+2019-07-10 19:07:05,552 DEBUG    [22340] (deoplete.core) Process 3: /Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/sources/neosnippet.py
+2019-07-10 19:07:05,763 INFO     [22342] (deoplete.logging) --- Deoplete Log Start ---
+2019-07-10 19:07:05,765 INFO     [22343] (deoplete.logging) --- Deoplete Log Start ---
+2019-07-10 19:07:05,766 INFO     [22342] (deoplete.logging) NVIM v0.3.8, Python 3.7.4, neovim client 0.3.1
+2019-07-10 19:07:05,771 INFO     [22343] (deoplete.logging) NVIM v0.3.8, Python 3.7.4, neovim client 0.3.1
+2019-07-10 19:07:05,776 DEBUG    [22342] (deoplete.child) Loaded Source: file (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/file.py)
+2019-07-10 19:07:05,781 DEBUG    [22343] (deoplete.child) Loaded Source: omni (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/omni.py)
+2019-07-10 19:07:05,781 INFO     [22344] (deoplete.logging) --- Deoplete Log Start ---
+2019-07-10 19:07:05,783 DEBUG    [22343] (deoplete.child) Loaded Source: buffer (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/buffer.py)
+2019-07-10 19:07:05,784 INFO     [22344] (deoplete.logging) NVIM v0.3.8, Python 3.7.4, neovim client 0.3.1
+2019-07-10 19:07:05,785 DEBUG    [22342] (deoplete.child) Loaded Source: go (/Users/Jim/.config/nvim/repos/github.com/deoplete-plugins/deoplete-go/rplugin/python3/deoplete/sources/deoplete_go.py)
+2019-07-10 19:07:05,789 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_auto_delimiter (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_auto_delimiter.py)
+2019-07-10 19:07:05,791 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_remove_paren (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_remove_paren.py)
+2019-07-10 19:07:05,792 DEBUG    [22344] (deoplete.child) Loaded Source: member (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/member.py)
+2019-07-10 19:07:05,792 DEBUG    [22342] (deoplete.child) Loaded Filter: matcher_head (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_head.py)
+2019-07-10 19:07:05,794 DEBUG    [22344] (deoplete.child) Loaded Source: dictionary (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/source/dictionary.py)
+2019-07-10 19:07:05,794 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_auto_paren (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_auto_paren.py)
+2019-07-10 19:07:05,795 DEBUG    [22342] (deoplete.child) Loaded Filter: matcher_cpsm (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_cpsm.py)
+2019-07-10 19:07:05,796 DEBUG    [22343] (deoplete.child) Loaded Source: typescript (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/sources/typescript.py)
+2019-07-10 19:07:05,797 DEBUG    [22342] (deoplete.child) Loaded Filter: matcher_fuzzy (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_fuzzy.py)
+2019-07-10 19:07:05,799 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_remove_overlap (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_remove_overlap.py)
+2019-07-10 19:07:05,800 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_auto_delimiter (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_auto_delimiter.py)
+2019-07-10 19:07:05,800 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_truncate_menu (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_menu.py)
+2019-07-10 19:07:05,801 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_remove_paren (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_remove_paren.py)
+2019-07-10 19:07:05,801 DEBUG    [22343] (deoplete.child) Loaded Filter: matcher_head (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_head.py)
+2019-07-10 19:07:05,802 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_auto_paren (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_auto_paren.py)
+2019-07-10 19:07:05,802 DEBUG    [22342] (deoplete.child) Loaded Filter: matcher_length (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_length.py)
+2019-07-10 19:07:05,802 DEBUG    [22343] (deoplete.child) Loaded Filter: matcher_cpsm (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_cpsm.py)
+2019-07-10 19:07:05,803 DEBUG    [22343] (deoplete.child) Loaded Filter: matcher_fuzzy (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_fuzzy.py)
+2019-07-10 19:07:05,803 DEBUG    [22342] (deoplete.child) Loaded Filter: sorter_rank (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/sorter_rank.py)
+2019-07-10 19:07:05,803 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_remove_overlap (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_remove_overlap.py)
+2019-07-10 19:07:05,804 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_truncate_menu (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_menu.py)
+2019-07-10 19:07:05,804 DEBUG    [22343] (deoplete.child) Loaded Filter: matcher_length (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_length.py)
+2019-07-10 19:07:05,804 DEBUG    [22343] (deoplete.child) Loaded Filter: sorter_rank (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/sorter_rank.py)
+2019-07-10 19:07:05,804 DEBUG    [22342] (deoplete.child) Loaded Filter: sorter_word (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/sorter_word.py)
+2019-07-10 19:07:05,805 DEBUG    [22343] (deoplete.child) Loaded Filter: sorter_word (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/sorter_word.py)
+2019-07-10 19:07:05,806 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_emoji (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_emoji.py)
+2019-07-10 19:07:05,806 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_emoji (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_emoji.py)
+2019-07-10 19:07:05,808 DEBUG    [22342] (deoplete.child) Loaded Filter: matcher_full_fuzzy (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_full_fuzzy.py)
+2019-07-10 19:07:05,808 DEBUG    [22343] (deoplete.child) Loaded Filter: matcher_full_fuzzy (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_full_fuzzy.py)
+2019-07-10 19:07:05,808 DEBUG    [22344] (deoplete.child) Loaded Source: emoji (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/sources/emoji.py)
+2019-07-10 19:07:05,809 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_truncate_abbr (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_abbr.py)
+2019-07-10 19:07:05,810 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_truncate_abbr (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_abbr.py)
+2019-07-10 19:07:05,811 DEBUG    [22343] (deoplete.child) Loaded Filter: converter_truncate_kind (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_kind.py)
+2019-07-10 19:07:05,811 DEBUG    [22342] (deoplete.child) Loaded Filter: converter_truncate_kind (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_kind.py)
+2019-07-10 19:07:05,813 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_auto_delimiter (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_auto_delimiter.py)
+2019-07-10 19:07:05,814 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_remove_paren (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_remove_paren.py)
+2019-07-10 19:07:05,814 DEBUG    [22344] (deoplete.child) Loaded Filter: matcher_head (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_head.py)
+2019-07-10 19:07:05,814 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_auto_paren (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_auto_paren.py)
+2019-07-10 19:07:05,815 DEBUG    [22344] (deoplete.child) Loaded Filter: matcher_cpsm (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_cpsm.py)
+2019-07-10 19:07:05,815 DEBUG    [22344] (deoplete.child) Loaded Filter: matcher_fuzzy (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_fuzzy.py)
+2019-07-10 19:07:05,816 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_remove_overlap (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_remove_overlap.py)
+2019-07-10 19:07:05,816 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_truncate_menu (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_menu.py)
+2019-07-10 19:07:05,816 DEBUG    [22344] (deoplete.child) Loaded Filter: matcher_length (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_length.py)
+2019-07-10 19:07:05,817 DEBUG    [22344] (deoplete.child) Loaded Filter: sorter_rank (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/sorter_rank.py)
+2019-07-10 19:07:05,818 DEBUG    [22344] (deoplete.child) Loaded Filter: sorter_word (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/sorter_word.py)
+2019-07-10 19:07:05,818 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_emoji (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_emoji.py)
+2019-07-10 19:07:05,819 DEBUG    [22344] (deoplete.child) Loaded Filter: matcher_full_fuzzy (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/matcher_full_fuzzy.py)
+2019-07-10 19:07:05,819 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_truncate_abbr (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_abbr.py)
+2019-07-10 19:07:05,820 DEBUG    [22344] (deoplete.child) Loaded Filter: converter_truncate_kind (/Users/Jim/.config/nvim/.cache/init.vim/.dein/rplugin/python3/deoplete/filter/converter_truncate_kind.py)
