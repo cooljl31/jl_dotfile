@@ -25,6 +25,7 @@ module.exports = {
     'httpie',
     'imagemagick',
     'imagesnap',
+    'zsh-autosuggestions',
     // jq is a sort of JSON grep
     'jq',
     // Mac App Store CLI: https://github.com/mas-cli/mas
@@ -43,7 +44,10 @@ module.exports = {
     'macvim --with-override-system-vim',
     'watch',
     // Install wget with IRI support
-    'wget --enable-iri'
+    'wget --enable-iri',
+    // Neovim
+    'neovim',
+    'rbenv'
   ],
   cask: [
     //'adium',
@@ -51,26 +55,31 @@ module.exports = {
     //'atom',
     'box-sync',
     //'comicbooklover',
-    //'diffmerge',
+    'diffmerge',
     //'dropbox',
-    //'evernote',
+    'evernote',
     'gpgtools',
     //'ireadfast',
     'iterm2',
     //'little-snitch',
     //'micro-snitch',
     'macvim',
-    'sizeup',
+    // 'sizeup',
     //'sketchup',
     'slack',
     'the-unarchiver',
     //'torbrowser',
     //'transmission',
     'vlc',
-    'xquartz'
+    'xquartz',
+    'visual-studio-code',
+    'spectacle',
+'1password',
+'chrome-devtools',
+'colorpicker-developer'
   ],
   gem: [
-    'git-up'
+    // 'git-up'
   ],
   npm: [
     'antic',
@@ -83,6 +92,7 @@ module.exports = {
     'gulp',
     'prettyjson',
     'trash',
-    'vtop'
+    'vtop',
+'neovim'
   ]
 };
