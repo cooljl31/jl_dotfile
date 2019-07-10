@@ -121,3 +121,14 @@ function tre(){
 function weather() {
   curl wttr.in/$1
 }
+
+# comment target
+comment() {
+  sed '' "s/^$1/#$1/" $1
+}
+
+# comment target
+uncomment() {
+  echo -e $1
+  sed '' "s/^#$1/$1/" $1
+}

@@ -146,11 +146,12 @@
   #testshfunction = "!function gitme() { git init $1; cd $1; }; gitme"
 
   fixup = "!sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
-  squash = "!sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -"
+  squash = "!sh -c 'git commit -m \"$(git log -1 --format='\\''%s'\\'' $@)\"' -"
   ccfq = "!sh -c 'git add $1 && git commit -m\"Placeholder\"' -"
   cob = checkout -b
   sno = show --name-only
   logsimple = log --graph --abbrev-commit --pretty=oneline --all --decorate
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [apply]
   whitespace = nowarn
 

@@ -108,3 +108,20 @@ build/Release
 node_modules
 
 .tern*
+
+# Visual studio Code
+.vscode/
+.forceCode
+force.json
+.sfdx
+sfdx-project.json
+.vim-force.com
+deploy
+soql
+web_backup
+**/*.sql
+.sql
+current
+stage
+provision
+shared
