@@ -16,3 +16,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+
+# BEGIN Ruboto setup
+# source ~/.rubotorc
+# END Ruboto setup

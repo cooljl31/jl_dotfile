@@ -50,7 +50,7 @@
   # fscache = true
 
 [alias]
-  passport = ~/.dotfiles/.git/hooks/bin/git-passport/git-passport.py
+  passport = $HOME/.dotfiles/git-passport/git-passport.py
   # most commonly used
   co = checkout
   d = diff --color-words
