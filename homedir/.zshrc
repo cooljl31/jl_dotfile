@@ -87,3 +87,24 @@ if [ -f '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc' ]; then source '/U
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/libiconv/bin:$PATH"
+# Zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# Neovim
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/gettext/lib"
+export CPPFLAGS="-I/usr/local/opt/gettext/include"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/cooljl31/.sdkman"
+[[ -s "/Users/cooljl31/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/cooljl31/.sdkman/bin/sdkman-init.sh"

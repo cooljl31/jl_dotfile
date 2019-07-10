@@ -63,16 +63,22 @@
   call dein#add('scrooloose/vim-slumlord')
   call dein#add('w0rp/ale')
   call dein#add('othree/html5.vim')
+  " call dein#add('roxma/nvim-completion-manager')
   call dein#add('elzr/vim-json')
+
+  call dein#add('rust-lang/rust.vim')
+  call dein#add('racer-rust/vim-racer')
+  call dein#add('roxma/nvim-cm-racer')
   call dein#add('google/vim-searchindex')
+
   call dein#add('tomtom/tcomment_vim')
   call dein#add('Yggdroot/indentLine')
   call dein#add('sbdchd/neoformat')
   call dein#add('tpope/vim-surround')
   call dein#add('mhartington/oceanic-next')
 
-  call dein#add('neovim/node-host', { 'do': 'npm install' })
-  call dein#add('vimlab/mdown.vim', { 'do': 'npm install' })
+  call dein#add('neovim/node-host')
+  " call dein#add('vimlab/mdown.vim', { 'do': 'npm install' })
 
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('tpope/vim-rails')
@@ -203,7 +209,7 @@
 " Let -----------------------------------------------------------{{{
   " let g:delve_backend = "native"
   let g:go_fmt_command = "goimports"
-  let g:python3_host_skip_check=1
+  " let g:python3_host_skip_check=1
   let g:jsx_ext_required = 0
   let g:sneak#streak = 1
   let g:miniBufExplMapWindowNavVim = 1
@@ -530,6 +536,8 @@ let g:go_metalinter_enabled = [
     \ 'vetshadow'
 \]
 
+
+let g:python3_host_prog  = '/usr/local/bin/python3'
 " Set whether the JSON tags should be snakecase or camelcase.
 let g:go_addtags_transform = "snakecase"
 

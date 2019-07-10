@@ -89,6 +89,7 @@ alias qltext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 0
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+alias reloadd="exec '$SHELL'"
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
@@ -103,7 +104,11 @@ alias vtop="vtop --theme wizard"
 alias dm='docker-machine'
 alias dc='docker-compose'
 alias dcup='docker-compose up -d'
-
+alias dcrm='docker rm $(docker ps -all -q)'
+alias dcrim='docker rmi $(docker images ls)'
+alias dcrun='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
+alias dccimages='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias dcc_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 # Gitx aliases
 alias gx='gitx'
 alias gxd='gitx --diff'
@@ -123,3 +128,5 @@ alias pip=pip3
 alias JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home'
 
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'
+alias gitlabpr="~/.dotfiles/gitlab-pr"
+alias frsync="~/.dotfiles/fast_rsync"

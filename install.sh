@@ -291,7 +291,7 @@ ok
 
 # Enable firewall stealth mode (no response to ICMP / ping requests)
 # Source: https://support.apple.com/kb/PH18642
-#sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
+# sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
 # sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
 
 # Enable firewall logging
@@ -342,10 +342,10 @@ ok
 #sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME -bool true
 
 # Do not show password hints
-#sudo defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 0
+sudo defaults write /Library/Preferences/com.apple.loginwindow RetriesUntilHint -int 0
 
 # Disable guest account login
-# sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
+sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool false
 
 # Automatically lock the login keychain for inactivity after 6 hours
 #security set-keychain-settings -t 21600 -l ~/Library/Keychains/login.keychain
@@ -355,7 +355,7 @@ ok
 #sudo pmset destroyfvkeyonstandby 1
 
 # Disable Bonjour multicast advertisements
-#sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
+sudo defaults write /Library/Preferences/com.apple.mDNSResponder.plist NoMulticastAdvertisements -bool true
 
 # Disable the crash reporter
 #defaults write com.apple.CrashReporter DialogType -string "none"
@@ -375,7 +375,7 @@ sudo perl -p -i -e 's/\/var\/log\/wtmp.*$/\/var\/log\/wtmp   \t\t\t640\ \ 31\   
 # Keep a log of kernel events for 30 days
 sudo perl -p -i -e 's|flags:lo,aa|flags:lo,aa,ad,fd,fm,-all,^-fa,^-fc,^-cl|g' /private/etc/security/audit_control
 sudo perl -p -i -e 's|filesz:2M|filesz:10M|g' /private/etc/security/audit_control
-sudo perl -p -i -e 's|expire-after:10M|expire-after: 30d |g' /private/etc/security/audit_control
+sudo perl -p -i -e 's|expire-after:10M|expire-after:30d|g' /private/etc/security/audit_control
 
 # Disable the “Are you sure you want to open this application?” dialog
 # defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -398,7 +398,7 @@ running "…and make sure it can’t be rewritten"
 sudo chflags uchg /Private/var/vm/sleepimage;ok
 
 running "Disable the sudden motion sensor as it’s not useful for SSDs"
-sudo pmset -a sms 0;ok
+#sudo pmset -a sms 0;ok
 
 ################################################
 # Optional / Experimental                      #
@@ -470,7 +470,7 @@ bot "Standard System Changes"
 # sudo pmset -a standbydelay 86400;ok
 
 # running "Disable the sound effects on boot"
-# sudo nvram SystemAudioVolume=" ";ok
+sudo nvram SystemAudioVolume=" ";ok
 
 # running "Menu bar: disable transparency"
 # defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false;ok
@@ -527,10 +527,10 @@ running "Remove duplicates in the “Open With” menu (also see 'lscleanup' ali
 # defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true;ok
 
 # running "Disable automatic termination of inactive apps"
-# defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true;ok
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true;ok
 
 # running "Disable the crash reporter"
-# defaults write com.apple.CrashReporter DialogType -string "none";ok
+defaults write com.apple.CrashReporter DialogType -string "none";ok
 
 # running "Set Help Viewer windows to non-floating mode"
 # defaults write com.apple.helpviewer DevMode -bool true;ok
@@ -539,7 +539,7 @@ running "Remove duplicates in the “Open With” menu (also see 'lscleanup' ali
 # sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName;ok
 
 # running "Restart automatically if the computer freezes"
-# sudo systemsetup -setrestartfreeze on;ok
+sudo systemsetup -setrestartfreeze on;ok
 
 running "Never go into computer sleep mode"
 sudo systemsetup -setcomputersleep Off > /dev/null;ok
@@ -551,10 +551,10 @@ sudo systemsetup -setcomputersleep Off > /dev/null;ok
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist > /dev/null 2>&1;ok
 
 # running "Disable smart quotes as they’re annoying when typing code"
-# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;ok
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;ok
 
 # running "Disable smart dashes as they’re annoying when typing code"
-# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false;ok
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false;ok
 
 
 ###############################################################################
@@ -630,7 +630,7 @@ defaults write com.apple.screencapture type -string "png";ok
 bot "Finder Configs"
 ###############################################################################
 # running "Keep folders on top when sorting by name (Sierra only)"
-# defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # running "Allow quitting via ⌘ + Q; doing so will also hide desktop icons"
 # defaults write com.apple.finder QuitMenuItem -bool true;ok
@@ -682,9 +682,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true;ok
 # defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true;ok
 
 # running "Automatically open a new Finder window when a volume is mounted"
-# defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-# defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-# defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true;ok
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true;ok
 
 # running "Use list view in all Finder windows by default"
 # # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
@@ -717,7 +717,7 @@ bot "Dock & Dashboard"
 # defaults write com.apple.dock mouse-over-hilite-stack -bool true;ok
 
 # running "Set the icon size of Dock items to 36 pixels"
-# defaults write com.apple.dock tilesize -int 36;ok
+defaults write com.apple.dock tilesize -int 36;ok
 
 # running "Change minimize/maximize window effect to scale"
 # defaults write com.apple.dock mineffect -string "scale";ok
@@ -991,10 +991,10 @@ bot "Mac App Store"
 ###############################################################################
 
 # running "Enable the WebKit Developer Tools in the Mac App Store"
-# defaults write com.apple.appstore WebKitDeveloperExtras -bool true;ok
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true;ok
 
 # running "Enable Debug Menu in the Mac App Store"
-# defaults write com.apple.appstore ShowDebugMenu -bool true;ok
+defaults write com.apple.appstore ShowDebugMenu -bool true;ok
 
 ###############################################################################
 bot "Messages"
