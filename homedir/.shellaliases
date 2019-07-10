@@ -19,7 +19,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias bpc='git add -A . && git cam "$(buzzphrase 2)" && git push'
 
 # compoer.phar
-alias composer='composer.phar'
+alias composer='/usr/local/bin/composer'
 
 # recursive dos2unix in current directory
 alias dos2lf='dos2unix `find ./ -type f`'
@@ -116,5 +116,10 @@ alias gxp='gitx -p'
 
 alias vss='open -a Visual\ Studio\ Code'
 alias tower='open -a Tower'
-
+alias vup='vagrant up'
+alias vsh='vagrant ssh'
 alias ctags="`brew --prefix`/bin/ctags"
+alias pip=pip3
+alias JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home'
+
+alias code-sfdx='code --extensions-dir ~/.sfdx-code'

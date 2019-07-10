@@ -1,5 +1,6 @@
 --color
 --format progress
+--format ParallelTests::RSpec::FailuresLogger --out tmp/failing_specs.log
 --no-profile
 --no-fail-fast
 --order defined

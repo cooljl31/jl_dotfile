@@ -20,7 +20,10 @@
   call dein#add('rhysd/nyaovim-popup-tooltip')
   call dein#add('haya14busa/dein-command.vim')
   call dein#add('alvan/vim-closetag')
+  call dein#add('metakirby5/codi.vim')
   call dein#add('bling/vim-airline')
+  call dein#add('junegunn/goyo.vim')
+  call dein#add('junegunn/limelight.vim')
   call dein#add('Quramy/tsuquyomi')
   call dein#add('chase/vim-ansible-yaml')
   call dein#add('chriskempson/base16-vim')
@@ -28,7 +31,7 @@
   call dein#add('easymotion/vim-easymotion')
   call dein#add('fatih/molokai')
   call dein#add('fatih/vim-go')
-  call dein#add('zchee/deoplete-go', { 'do': 'make'})
+  call dein#add('deoplete-plugins/deoplete-go', {'build': 'make'})
   call dein#add('godlygeek/tabular')
   call dein#add('jgdavey/tslime.vim')
   call dein#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' })
@@ -36,7 +39,7 @@
   call dein#add('junegunn/gv.vim')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('kshenoy/vim-signature')
-  call dein#add('majutsushi/tagbar')
+  call dein#add('sebdah/vim-delve')
   call dein#add('mhinz/vim-signify')
   call dein#add('mhinz/vim-startify')
   call dein#add('mileszs/ack.vim')
@@ -60,11 +63,9 @@
   call dein#add('scrooloose/vim-slumlord')
   call dein#add('w0rp/ale')
   call dein#add('othree/html5.vim')
-  call dein#add('roxma/nvim-completion-manager')
   call dein#add('elzr/vim-json')
   call dein#add('google/vim-searchindex')
   call dein#add('tomtom/tcomment_vim')
-  call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call dein#add('Yggdroot/indentLine')
   call dein#add('sbdchd/neoformat')
   call dein#add('tpope/vim-surround')
@@ -100,6 +101,12 @@
   call dein#add('sjl/vitality.vim')
   call dein#add('ryanoasis/vim-devicons')
   call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+  call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+  call dein#add('fszymanski/deoplete-emoji')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
   if dein#check_install()
     call dein#install()
     let pluginsExist=1
@@ -188,9 +195,13 @@
 
   noremap <silent> <c-s-up> :call <SID>swap_up()<CR>
   noremap <silent> <c-s-down> :call <SID>swap_down()<CR>
+  map <leader>z :Goyo<CR>
+  nmap <Leader>l <Plug>(Limelight)
+  xmap <Leader>l <Plug>(Limelight)
 "}}}"
 
 " Let -----------------------------------------------------------{{{
+  " let g:delve_backend = "native"
   let g:go_fmt_command = "goimports"
   let g:python3_host_skip_check=1
   let g:jsx_ext_required = 0
@@ -315,6 +326,8 @@
       \ if line("'\"") > 1 && line("'\"") <= line("$") |
       \   exe "normal! g`\"" |
       \ endif
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
 " Code formatting -----------------------------------------------------------{{{
 
   ",f to format code, requires formatters: read the docs
@@ -436,6 +449,7 @@ call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
   \ [ '.git/', '.ropeproject/', '__pycache__/',
   \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
 call denite#custom#var('menu', 'menus', s:menus)
+call deoplete#custom#source('emoji', 'filetypes', ['rst','golang','ruby'])
 
 "}}}
 

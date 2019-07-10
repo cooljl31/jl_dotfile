@@ -46,7 +46,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colorize compleat dirpersist zsh-autosuggestions autojump git gulp history cp)
+plugins=(wp-cli colorize compleat dirpersist zsh-autosuggestions autojump git gulp history cp)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -82,20 +82,8 @@ eval `ssh-agent -s`
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/cooljl31/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Zplug
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-# Neovim
-export PATH="/usr/local/opt/gettext/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/gettext/lib"
-export CPPFLAGS="-I/usr/local/opt/gettext/include"
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
-
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# added by travis gem
+[ -f /Users/Jim/.travis/travis.sh ] && source /Users/Jim/.travis/travis.sh
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export PATH="/usr/local/opt/libiconv/bin:$PATH"
