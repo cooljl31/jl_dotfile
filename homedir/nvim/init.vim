@@ -28,6 +28,7 @@
   call dein#add('chase/vim-ansible-yaml')
   call dein#add('chriskempson/base16-vim')
   call dein#add('dgryski/vim-godef')
+  call dein#add('rhysd/vim-crystal')
   call dein#add('easymotion/vim-easymotion')
   call dein#add('fatih/molokai')
   call dein#add('fatih/vim-go')

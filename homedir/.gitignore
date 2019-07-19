@@ -125,3 +125,4 @@ current
 stage
 provision
 shared
+*.tags
