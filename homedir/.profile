@@ -1,7 +1,7 @@
 #############################################################
 # Generic configuration that applies to all shells
 #############################################################
-
+source ~/.env
 source ~/.shellvars
 source ~/.shellfn
 source ~/.shellpaths

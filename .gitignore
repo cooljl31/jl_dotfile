@@ -21,3 +21,6 @@ homedir/nvim/nvim-python.*
 homedir/.vim/undo/**
 .tern*
 log/*
+.env
+*.log
+

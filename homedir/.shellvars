@@ -27,6 +27,8 @@ export PKG_CONFIG_PATH=$HOME/goworkspace/src/github.com/mattn/go-oci8
 #########################################################################
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 export NVM_DIR=~/.nvm
+NODE_VERSION=$(node --version)
+export NODE_PATH=~/.nvm/versions/node/$NODE_VERSION/lib/node_modules
 export DATASTORE_EMULATOR_HOST=localhost:8081
 # export ANDROID_NDK_HOME=/usr/local/share/android-ndk
 # export JAVA_HOME=$(/usr/libexec/java_home)
@@ -41,6 +43,5 @@ export brewdoctor="brew doctor `brew doctor --list-checks | grep -v stray_header
 # export ANDROID_NDK_HOME=/usr/local/android-ndk
 # export SDKMANAGER_OPTS="-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee"
 export ANDROID_HOME=$HOME/Library/Android/sdk
-#########################################################################
-# Tokens
-#########################################################################
+
+export GIT_TERMINAL_PROMPT=1
