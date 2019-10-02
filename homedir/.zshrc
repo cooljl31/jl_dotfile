@@ -44,6 +44,7 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # disable autosetting terminal title.
 export DISABLE_AUTO_TITLE="true"
 
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(wp-cli colorize compleat dirpersist zsh-autosuggestions autojump git gulp history cp)
@@ -108,3 +109,4 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/cooljl31/.sdkman"
 [[ -s "/Users/cooljl31/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/cooljl31/.sdkman/bin/sdkman-init.sh"
+ [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
