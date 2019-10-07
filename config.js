@@ -58,7 +58,8 @@ module.exports = {
 		'postgresql',
 		'rust',
 		'rustup',
-		'llvm'
+		'llvm',
+		'nodenv'
 	],
 	cask: [
 		'sequel-pro',

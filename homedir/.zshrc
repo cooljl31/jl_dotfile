@@ -53,18 +53,18 @@ source $ZSH/oh-my-zsh.sh
 #source ~/.dotfiles/oh-my-zsh/plugins/zsh-autosuggestions # /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-source /usr/local/opt/nvm/nvm.sh
+# source /usr/local/opt/nvm/nvm.sh
 
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use &> /dev/null
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    nvm use default &> /dev/null
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   if [[ -f .nvmrc && -r .nvmrc ]]; then
+#     nvm use &> /dev/null
+#   elif [[ $(nvm version) != $(nvm version default)  ]]; then
+#     nvm use default &> /dev/null
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 # Customize to your needs...
 unsetopt correct
@@ -103,10 +103,14 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh"
+
+# NodeEnv
+eval "$(nodenv init -)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/cooljl31/.sdkman"
 [[ -s "/Users/cooljl31/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/cooljl31/.sdkman/bin/sdkman-init.sh"
  [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+export PATH="$HOME/.nodenv/bin:$PATH"

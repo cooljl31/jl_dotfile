@@ -1,22 +1,21 @@
 {
-  "Profiles": [{
+  "Profiles": [
+    {
       "Ansi 0 Color": {
         "Green Component": 0,
         "Red Component": 0,
         "Blue Component": 0
       },
-      "Tags": [
-
-      ],
+      "Tags": [],
       "Ansi 12 Color": {
         "Green Component": 0.3333333432674408,
         "Red Component": 0.3333333432674408,
         "Blue Component": 1
       },
       "Ansi 7 Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
       "AWDS Tab Directory": "",
       "Bold Color": {
@@ -61,14 +60,12 @@
         "Blue Component": 1
       },
       "Foreground Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
-      "Bound Hosts": [
-
-      ],
-      "Working Directory": "\/Users\/cooljl31",
+      "Bound Hosts": [],
+      "Working Directory": "/Users/cooljl31",
       "Blinking Cursor": false,
       "AWDS Window Option": "No",
       "Sync Title": false,
@@ -81,7 +78,7 @@
       "Screen": -1,
       "Selection Color": {
         "Green Component": 0.8353000283241272,
-        "Red Component": 0.70980000495910645,
+        "Red Component": 0.7098000049591064,
         "Blue Component": 1
       },
       "Mouse Reporting": true,
@@ -291,52 +288,52 @@
       "Name": "Default",
       "Shortcut": "",
       "Cursor Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
       "Transparency": 0,
       "Ansi 1 Color": {
         "Green Component": 0,
-        "Red Component": 0.73333334922790527,
+        "Red Component": 0.7333333492279053,
         "Blue Component": 0
       },
       "Custom Directory": "Recycle",
       "Ansi 3 Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
         "Blue Component": 0
       },
       "Ansi 4 Color": {
         "Green Component": 0,
         "Red Component": 0,
-        "Blue Component": 0.73333334922790527
+        "Blue Component": 0.7333333492279053
       },
       "Ansi 5 Color": {
         "Green Component": 0,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
       "Use Non-ASCII Font": true,
       "Ansi 6 Color": {
-        "Green Component": 0.73333334922790527,
+        "Green Component": 0.7333333492279053,
         "Red Component": 0,
-        "Blue Component": 0.73333334922790527
+        "Blue Component": 0.7333333492279053
       },
-      "Normal Font": "OperatorMono-Book 16",
+      "Normal Font" : "FuraCodeNerdFont 16",
       "Guid": "CB3C36B1-3324-4815-B9EF-E49CDAB11D1F",
-      "Horizontal Spacing": 0.99271107868975905,
+      "Horizontal Spacing": 0.992711078689759,
       "Ansi 2 Color": {
-        "Green Component": 0.73333334922790527,
+        "Green Component": 0.7333333492279053,
         "Red Component": 0,
         "Blue Component": 0
       }
     },
     {
       "Thin Strokes": 3,
-      "Working Directory": "\/Users\/cooljl31",
+      "Working Directory": "/Users/cooljl31",
       "Prompt Before Closing 2": false,
-      "Dynamic Profile Filename": "\/Users\/cooljl31\/Library\/Application Support\/iTerm2\/DynamicProfiles\/bk.json",
+      "Dynamic Profile Filename": "/Users/cooljl31/Library/Application Support/iTerm2/DynamicProfiles/bk.json",
       "Selected Text Color": {
         "Green Component": 0,
         "Red Component": 0,
@@ -350,16 +347,16 @@
       },
       "Use Italic Font": true,
       "Foreground Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
       "Right Option Key Sends": 0,
       "Show Status Bar": true,
       "Character Encoding": 4,
       "Selection Color": {
         "Green Component": 0.8353000283241272,
-        "Red Component": 0.70980000495910645,
+        "Red Component": 0.7098000049591064,
         "Blue Component": 1
       },
       "Blend": 0.615966796875,
@@ -367,12 +364,12 @@
       "Ansi 4 Color": {
         "Green Component": 0,
         "Red Component": 0,
-        "Blue Component": 0.73333334922790527
+        "Blue Component": 0.7333333492279053
       },
       "Non-ASCII Anti Aliased": true,
       "Sync Title": false,
       "Disable Window Resizing": true,
-      "Description": "Default",
+      "Description": "Default 1",
       "Close Sessions On End": true,
       "Jobs to Ignore": [
         "rlogin",
@@ -383,7 +380,8 @@
       "Non-ASCII Ligatures": false,
       "Scrollback Lines": 0,
       "Status Bar Layout": {
-        "components": [{
+        "components": [
+          {
             "class": "iTermStatusBarGitComponent",
             "configuration": {
               "knobs": {
@@ -391,7 +389,7 @@
                 "iTermStatusBarGitComponentPollingIntervalKey": 2,
                 "base: priority": 5,
                 "shared text color": {
-                  "Red Component": 0.90000000000000002,
+                  "Red Component": 0.9,
                   "Color Space": "sRGB",
                   "Blue Component": 0.63,
                   "Alpha Component": 1,
@@ -401,88 +399,88 @@
                 "minwidth": 0
               },
               "layout advanced configuration dictionary value": {
-                "font": ".AppleSystemUIFont 12",
+                "font": ".AppleSystemUIFontgit@github.com:hanseventures/company-website.git 12",
                 "algorithm": 0
               }
             }
           },
           {
-            "class": "iTermStatusBarCPUUtilizationComponent",
+            "class": "iTermStatusBarCPUUtilgit@github.com:hanseventures/company-website.gitizationComponent",
             "configuration": {
               "knobs": {
                 "base: priority": 5,
-                "base: compression resistance": 1,
+                "base: compression resistangit@github.com:hanseventures/company-website.gitce": 1,
                 "shared text color": {
                   "Red Component": 0.63,
                   "Color Space": "sRGB",
                   "Blue Component": 0.63,
                   "Alpha Component": 1,
-                  "Green Component": 0.90000000000000002
+                  "Green Component": 0.9
                 }
               },
-              "layout advanced configuration dictionary value": {
-                "font": ".AppleSystemUIFont 12",
+              "layout advanced configuratiogit@github.com:hanseventures/company-website.gitn dictionary value": {
+                "font": ".AppleSystemUIFontgit@github.com:hanseventures/company-website.git 12",
                 "algorithm": 0
               }
             }
           },
           {
-            "class": "iTermStatusBarMemoryUtilizationComponent",
+            "class": "iTermStatusBarMemoryUgit@github.com:hanseventures/company-website.gittilizationComponent",
             "configuration": {
               "knobs": {
                 "base: priority": 5,
-                "base: compression resistance": 1,
+                "base: compression resistangit@github.com:hanseventures/company-website.gitce": 1,
                 "shared text color": {
                   "Red Component": 0.63,
                   "Color Space": "sRGB",
-                  "Blue Component": 0.90000000000000002,
+                  "Blue Component": 0.9,
                   "Alpha Component": 1,
-                  "Green Component": 0.90000000000000002
+                  "Green Component": 0.9
                 }
               },
-              "layout advanced configuration dictionary value": {
-                "font": ".AppleSystemUIFont 12",
+              "layout advanced configuratiogit@github.com:hanseventures/company-website.gitn dictionary value": {
+                "font": ".AppleSystemUIFontgit@github.com:hanseventures/company-website.git 12",
                 "algorithm": 0
               }
             }
           },
           {
-            "class": "iTermStatusBarNetworkUtilizationComponent",
+            "class": "iTermStatusBarNetworkgit@github.com:hanseventures/company-website.gitUtilizationComponent",
             "configuration": {
               "knobs": {
                 "base: priority": 5,
-                "base: compression resistance": 1,
+                "base: compression resistangit@github.com:hanseventures/company-website.gitce": 1,
                 "shared text color": {
                   "Red Component": 0.63,
                   "Color Space": "sRGB",
-                  "Blue Component": 0.90000000000000002,
+                  "Blue Component": 0.9,
                   "Alpha Component": 1,
                   "Green Component": 0.63
                 }
               },
-              "layout advanced configuration dictionary value": {
-                "font": ".AppleSystemUIFont 12",
+              "layout advanced configuratiogit@github.com:hanseventures/company-website.gitn dictionary value": {
+                "font": ".AppleSystemUIFontgit@github.com:hanseventures/company-website.git 12",
                 "algorithm": 0
               }
             }
           },
           {
-            "class": "iTermStatusBarClockComponent",
+            "class": "iTermStatusBarClockCogit@github.com:hanseventures/company-website.gitmponent",
             "configuration": {
               "knobs": {
                 "base: priority": 5,
                 "shared text color": {
-                  "Red Component": 0.90000000000000002,
+                  "Red Component": 0.9,
                   "Color Space": "sRGB",
-                  "Blue Component": 0.90000000000000002,
+                  "Blue Component": 0.9,
                   "Alpha Component": 1,
                   "Green Component": 0.63
                 },
-                "base: compression resistance": 1,
-                "format": "M\/dd h:mm"
+                "base: compression resistangit@github.com:hanseventures/company-website.gitce": 1,
+                "format": "M/dd h:mm"
               },
-              "layout advanced configuration dictionary value": {
-                "font": ".AppleSystemUIFont 12",
+              "layout advanced configuratiogit@github.com:hanseventures/company-website.gitn dictionary value": {
+                "font": ".AppleSystemUIFontgit@github.com:hanseventures/company-website.git 12",
                 "algorithm": 0
               }
             }
@@ -497,14 +495,14 @@
       "BM Growl": true,
       "AWDS Window Directory": "",
       "Ansi 3 Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
+        "Green Component": 0.73333334922790git@github.com:hanseventures/company-website.git53,
+        "Red Component": 0.7333333492279053git@github.com:hanseventures/company-website.git,
         "Blue Component": 0
       },
       "Icon": 1,
       "Use Non-ASCII Font": true,
       "Shortcut": "",
-      "Background Image Location": "\/Users\/cooljl31\/.dotfiles\/configs\/outer-space-wallpaper-23.jpg",
+      "Background Image Location": "/Users/git@github.com:hanseventures/company-website.gitcooljl31/.dotfiles/configs/outer-space-wallpaper-23.jpg",
       "Bold Color": {
         "Green Component": 1,
         "Red Component": 1,
@@ -677,11 +675,11 @@
       },
       "Ansi 14 Color": {
         "Green Component": 1,
-        "Red Component": 0.3333333432674408,
+        "Red Component": 0.3333333432674408git@github.com:hanseventures/company-website.git,
         "Blue Component": 1
       },
       "Ansi 2 Color": {
-        "Green Component": 0.73333334922790527,
+        "Green Component": 0.73333334922790git@github.com:hanseventures/company-website.git53,
         "Red Component": 0,
         "Blue Component": 0
       },
@@ -691,15 +689,15 @@
         "Dynamic"
       ],
       "Ansi 9 Color": {
-        "Green Component": 0.3333333432674408,
+        "Green Component": 0.33333334326744git@github.com:hanseventures/company-website.git08,
         "Red Component": 1,
-        "Blue Component": 0.3333333432674408
+        "Blue Component": 0.333333343267440git@github.com:hanseventures/company-website.git8
       },
       "Use Bold Font": true,
       "Silence Bell": false,
       "Ansi 12 Color": {
-        "Green Component": 0.3333333432674408,
-        "Red Component": 0.3333333432674408,
+        "Green Component": 0.33333334326744git@github.com:hanseventures/company-website.git08,
+        "Red Component": 0.3333333432674408git@github.com:hanseventures/company-website.git,
         "Blue Component": 1
       },
       "Window Type": 0,
@@ -711,16 +709,16 @@
       },
       "Default Bookmark": "No",
       "Cursor Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
       "Ansi 1 Color": {
         "Green Component": 0,
-        "Red Component": 0.73333334922790527,
+        "Red Component": 0.7333333492279053,
         "Blue Component": 0
       },
-      "Name": "Default",
+      "Name": "Default 1",
       "Blinking Cursor": false,
       "Guid": "1751D665-BD15-4A07-A608-2BF940B15AC8",
       "Idle Code": 0,
@@ -744,11 +742,11 @@
       "AWDS Pane Directory": "",
       "Blur": false,
       "Vertical Spacing": 1,
-      "Normal Font": "OperatorMono-Book 16",
+      "Normal Font" : "FuraCodeNerdFont 16",
       "Ansi 7 Color": {
-        "Green Component": 0.73333334922790527,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Green Component": 0.7333333492279053,
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       },
       "AWDS Tab Directory": "",
       "AWDS Pane Option": "No",
@@ -764,9 +762,9 @@
         "Blue Component": 1
       },
       "Ansi 6 Color": {
-        "Green Component": 0.73333334922790527,
+        "Green Component": 0.7333333492279053,
         "Red Component": 0,
-        "Blue Component": 0.73333334922790527
+        "Blue Component": 0.7333333492279053
       },
       "Transparency": 0,
       "Background Color": {
@@ -776,9 +774,7 @@
       },
       "Screen": -1,
       "AWDS Window Option": "No",
-      "Bound Hosts": [
-
-      ],
+      "Bound Hosts": [],
       "Non Ascii Font": "FuraCodeNerdFont 16",
       "Ansi 13 Color": {
         "Green Component": 0.3333333432674408,
@@ -791,8 +787,8 @@
       "Custom Directory": "Recycle",
       "Ansi 5 Color": {
         "Green Component": 0,
-        "Red Component": 0.73333334922790527,
-        "Blue Component": 0.73333334922790527
+        "Red Component": 0.7333333492279053,
+        "Blue Component": 0.7333333492279053
       }
     }
   ]
