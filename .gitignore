@@ -20,7 +20,7 @@ homedir/nvim/nvim-python.*
 !homedir/.vim/bundle/Vundle.vim
 homedir/.vim/undo/**
 .tern*
-log/*
+log
 .env
 *.log
 

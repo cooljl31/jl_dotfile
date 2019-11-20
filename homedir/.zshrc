@@ -47,24 +47,28 @@ export DISABLE_AUTO_TITLE="true"
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(wp-cli colorize compleat dirpersist zsh-autosuggestions autojump git gulp history cp)
+plugins=(wp-cli colorize compleat dirpersist autojump git gulp history cp)
 
 source $ZSH/oh-my-zsh.sh
 #source ~/.dotfiles/oh-my-zsh/plugins/zsh-autosuggestions # /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# source /usr/local/opt/nvm/nvm.sh
+#source ~/.dotfiles/oh-my-zsh/plugins/zsh-autosuggestions
+# /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+test -e "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" && source "/usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-# autoload -U add-zsh-hook
-# load-nvmrc() {
-#   if [[ -f .nvmrc && -r .nvmrc ]]; then
-#     nvm use &> /dev/null
-#   elif [[ $(nvm version) != $(nvm version default)  ]]; then
-#     nvm use default &> /dev/null
-#   fi
-# }
-# add-zsh-hook chpwd load-nvmrc
-# load-nvmrc
+source /usr/local/opt/nvm/nvm.sh
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use &> /dev/null
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    nvm use default &> /dev/null
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # Customize to your needs...
 unsetopt correct
