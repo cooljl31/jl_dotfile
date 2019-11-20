@@ -47,7 +47,7 @@ export DISABLE_AUTO_TITLE="true"
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(wp-cli colorize compleat dirpersist autojump git gulp history cp)
+plugins=(wp-cli colorize compleat dirpersist git gulp history cp)
 
 source $ZSH/oh-my-zsh.sh
 #source ~/.dotfiles/oh-my-zsh/plugins/zsh-autosuggestions # /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

@@ -59,7 +59,8 @@ module.exports = {
 		'rust',
 		'rustup',
 		'llvm',
-		'nodenv'
+		'nodenv',
+		'autojump'
 	],
 	cask: [
 		'sequel-pro',
