@@ -86,6 +86,7 @@ module.exports = {
 		'the-unarchiver',
 		//'torbrowser',
 		//'transmission',
+		'bitbar',
 		'vlc',
 		'xquartz',
 		'visual-studio-code',
